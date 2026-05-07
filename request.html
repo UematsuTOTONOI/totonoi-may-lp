@@ -1,53 +1,336 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>予約リクエスト｜5月限定直前割｜TOTONOI富士山中湖</title>
-  <meta name="description" content="TOTONOI富士山中湖 5月限定直前割の予約リクエストフォームです。送信後、スタッフが空室状況を確認し、予約可否をご連絡します。">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>予約リクエスト｜TOTONOI富士山中湖 5月限定直前割</title>
+  <meta name="description" content="TOTONOI富士山中湖 5月限定直前割の予約リクエストフォームです。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .request-page {
+      background: var(--cream);
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    .request-hero {
+      padding: 90px 0 70px;
+      background:
+        linear-gradient(120deg, rgba(11,25,19,0.78), rgba(11,25,19,0.45)),
+        url("images/hero-night-fuji-dome.webp") center center / cover no-repeat;
+      color: #fff;
+      text-align: center;
+    }
+
+    .request-hero h1 {
+      margin: 0;
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.45;
+    }
+
+    .request-hero p {
+      max-width: 720px;
+      margin: 18px auto 0;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .request-wrap {
+      max-width: 920px;
+      margin: -34px auto 0;
+      background: #fff;
+      border-radius: 28px;
+      padding: 38px;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 2;
+    }
+
+    .request-note {
+      background: #f7f3ec;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 28px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .request-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-weight: 800;
+      color: var(--green);
+      font-size: 14px;
+    }
+
+    .form-group label span {
+      display: inline-block;
+      margin-left: 6px;
+      color: #fff;
+      background: var(--gold);
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 11px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 13px 14px;
+      font: inherit;
+      background: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .submit-area {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .submit-btn {
+      border: none;
+      cursor: pointer;
+      min-width: 300px;
+      min-height: 58px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #c5a15c, #a88241);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      box-shadow: 0 14px 30px rgba(169, 130, 65, 0.25);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .thanks-box {
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .thanks-box h2 {
+      font-family: "Noto Serif JP", serif;
+      color: var(--green);
+      font-size: 32px;
+      margin: 0 0 16px;
+    }
+
+    .thanks-box p {
+      color: var(--subtext);
+    }
+
+    .back-link {
+      display: inline-flex;
+      margin-top: 20px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    @media (max-width: 768px) {
+      .request-wrap {
+        width: calc(100% - 28px);
+        padding: 24px 18px;
+      }
+
+      .request-form {
+        grid-template-columns: 1fr;
+      }
+
+      .submit-btn {
+        width: 100%;
+        min-width: auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <main class="request-page">
     <section class="request-hero">
       <div class="container">
-        <a class="back-link" href="index.html">← LPに戻る</a>
-        <p class="ribbon">このページ限定</p>
+        <p class="hero-badge">このページ限定</p>
         <h1>5月限定直前割<br>予約リクエスト</h1>
-        <p>フォーム送信後、スタッフが空室状況を確認し、空室がある場合のみ20%OFF適用のご案内をいたします。送信時点では予約確定ではありません。</p>
+        <p>
+          フォーム送信時点では予約確定ではありません。<br>
+          スタッフが空室状況を確認し、空室がある場合のみ正式なご案内を差し上げます。
+        </p>
       </div>
     </section>
 
-    <section class="section section--cream">
-      <div class="container request-layout">
-        <div class="request-card">
-          <h2>リクエスト内容を入力</h2>
-          <p class="form-note">GitHub Pagesで公開する場合、このフォームを動かすにはGoogleフォーム、Google Apps Script、Formspree等との接続が必要です。接続前は送信されません。</p>
-          <form class="request-form" action="YOUR_FORM_ENDPOINT_HERE" method="post">
-            <label>お名前<span>必須</span><input type="text" name="name" required></label>
-            <label>メールアドレス<span>必須</span><input type="email" name="email" required></label>
-            <label>電話番号<span>必須</span><input type="tel" name="tel" required></label>
-            <label>宿泊希望日<span>必須</span><input type="date" name="checkin" required></label>
-            <label>宿泊数<span>必須</span><select name="nights" required><option value="">選択してください</option><option>1泊</option><option>2泊</option><option>3泊以上</option></select></label>
-            <label>大人の人数<span>必須</span><select name="adults" required><option value="">選択してください</option><option>1名</option><option>2名</option><option>3名</option><option>4名</option><option>5名以上</option></select></label>
-            <label>子どもの人数<input type="text" name="children" placeholder="例：小学生1名、未就学児1名"></label>
-            <label>愛犬同伴<select name="dog"><option>なし</option><option>あり</option><option>検討中</option></select></label>
-            <label>ご希望・ご質問<textarea name="message" rows="5" placeholder="希望のお部屋、食事、サウナ利用などがあればご記入ください"></textarea></label>
-            <label class="agree"><input type="checkbox" required> <span>送信時点では予約確定ではなく、スタッフ確認後の案内であることを確認しました。</span></label>
-            <button type="submit" class="btn btn--primary">予約リクエストを送信する</button>
-          </form>
-        </div>
-        <aside class="request-side">
-          <h3>確認事項</h3>
-          <ul class="check-list check-list--dark">
-            <li>土曜日の宿泊は20%OFF対象外です</li>
-            <li>空室状況によりご案内できない場合があります</li>
-            <li>通常プランも販売中のため、先着順での確認となります</li>
-            <li>スタッフからの連絡をもって予約確定となります</li>
-          </ul>
-        </aside>
+    <section class="request-wrap">
+      <div class="request-note">
+        <strong>ご確認ください</strong><br>
+        ・本キャンペーンは5月宿泊かつ土曜日以外の日程が対象です。<br>
+        ・現地決済のみとなります。<br>
+        ・キャンセル料は通常通り、30日前〜8日前：50％、7日前〜当日：100％が発生します。<br>
+        ・空室状況により、ご希望に添えない場合がございます。
       </div>
+
+      <form id="requestForm" class="request-form" action="ここにGASのURLを入れる" method="POST">
+        <div class="form-group">
+          <label>SNSアカウント名 <span>必須</span></label>
+          <input type="text" name="sns_account" required placeholder="@example">
+        </div>
+
+        <div class="form-group">
+          <label>ご予約希望日 <span>必須</span></label>
+          <input type="date" name="checkin" required>
+        </div>
+
+        <div class="form-group">
+          <label>ご希望のお部屋</label>
+          <select name="room_type">
+            <option value="">選択してください</option>
+            <option value="シングルドーム">シングルドーム</option>
+            <option value="ドッグランドーム">ドッグランドーム</option>
+            <option value="コネクトドーム">コネクトドーム</option>
+            <option value="ドッグコテージ">ドッグコテージ</option>
+            <option value="未定・おまかせ">未定・おまかせ</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>ご利用人数 <span>必須</span></label>
+          <select name="guests" required>
+            <option value="">選択してください</option>
+            <option value="2名">2名</option>
+            <option value="3名">3名</option>
+            <option value="4名">4名</option>
+            <option value="5名">5名</option>
+            <option value="6名">6名</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>ご氏名 <span>必須</span></label>
+          <input type="text" name="name" required placeholder="山田 太郎">
+        </div>
+
+        <div class="form-group">
+          <label>メールアドレス <span>必須</span></label>
+          <input type="email" name="email" required placeholder="example@example.com">
+        </div>
+
+        <div class="form-group">
+          <label>生年月日 <span>必須</span></label>
+          <input type="date" name="birthday" required>
+        </div>
+
+        <div class="form-group">
+          <label>電話番号 <span>必須</span></label>
+          <input type="tel" name="tel" required placeholder="090-0000-0000">
+        </div>
+
+        <div class="form-group full">
+          <label>ご住所 <span>必須</span></label>
+          <input type="text" name="address" required placeholder="都道府県・市区町村・番地・建物名">
+        </div>
+
+        <div class="form-group">
+          <label>食事プラン</label>
+          <select name="meal_plan">
+            <option value="">選択してください</option>
+            <option value="素泊まり">素泊まり</option>
+            <option value="夕朝食付き">夕朝食付き</option>
+            <option value="夕食のみ">夕食のみ</option>
+            <option value="朝食のみ">朝食のみ</option>
+            <option value="未定">未定</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>愛犬同伴</label>
+          <select name="dog">
+            <option value="">選択してください</option>
+            <option value="なし">なし</option>
+            <option value="あり">あり</option>
+            <option value="相談したい">相談したい</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>オプション希望</label>
+          <textarea name="options" rows="4" placeholder="例：アニバーサリーケーキ4号、Birthdayバルーン ピンク、ペット用birthdayセットなど"></textarea>
+        </div>
+
+        <div class="form-group full">
+          <label>ご質問・ご要望</label>
+          <textarea name="message" rows="5" placeholder="到着時間、希望内容、ご質問などがあればご記入ください。"></textarea>
+        </div>
+
+        <div class="submit-area">
+          <button type="submit" class="submit-btn">予約リクエストを送信する</button>
+        </div>
+      </form>
     </section>
   </main>
+
+  <script>
+    const form = document.getElementById("requestForm");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const submitButton = form.querySelector(".submit-btn");
+      submitButton.disabled = true;
+      submitButton.textContent = "送信中...";
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+      })
+      .then(() => {
+        form.parentElement.innerHTML = `
+          <div class="thanks-box">
+            <h2>予約リクエストを受け付けました</h2>
+            <p>
+              ご入力いただいた内容をスタッフが確認し、空室状況を確認のうえご連絡いたします。<br>
+              この時点では予約確定ではございません。
+            </p>
+            <a class="back-link" href="index.html">LPに戻る</a>
+          </div>
+        `;
+      })
+      .catch(() => {
+        submitButton.disabled = false;
+        submitButton.textContent = "予約リクエストを送信する";
+        alert("送信に失敗しました。時間をおいて再度お試しください。");
+      });
+    });
+  </script>
 </body>
 </html>
