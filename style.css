@@ -75,23 +75,17 @@ a {
 }
 
 .brand {
-  color: #fff;
   display: inline-flex;
-  flex-direction: column;
-  line-height: 1.1;
+  align-items: center;
+  line-height: 1;
 }
 
-.brand-main {
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  font-size: 17px;
-}
-
-.brand-sub {
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  opacity: 0.78;
-  margin-top: 4px;
+.brand img {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
 }
 
 .header-nav {
@@ -1430,9 +1424,10 @@ textarea {
 }
 
 @media (max-width: 768px) {
-  body {
-    padding-bottom: 86px;
+  .brand img {
+    width: 190px;
   }
+}
 
   .sticky-cta {
     left: 12px;
