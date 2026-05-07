@@ -12,6 +12,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- GA4 / Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E17Z6DEL7V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E17Z6DEL7V');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '956532880602865');
+    fbq('track', 'PageView');
+    fbq('trackCustom', 'ViewRequestPage');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=956532880602865&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 
 <body>
@@ -140,7 +171,7 @@
           <p class="form-section-lead">
             ご希望貸切サウナをご選択ください。枠に制限がございますため、1組1枠のみとなります。<br />
             サウナの種類は
-            <a href="https://www.yamanashi-sauna-glamping.com/sauna/" target="_blank" rel="noopener noreferrer" style="color:#0b62c4;text-decoration:underline;">こちら</a>
+            <a href="https://www.yamanashi-sauna-glamping.com/sauna/" target="_blank" rel="noopener noreferrer" style="color:#0b62c4;text-decoration:underline;" onclick="gtag('event', 'click_sauna_page_from_request'); fbq('trackCustom', 'ClickSaunaPageFromRequest');">こちら</a>
           </p>
 
           <input type="hidden" name="sauna_price_note" value="サウナ 1枠 5,000円" />
@@ -299,6 +330,13 @@
       const submitButton = form.querySelector(".submit-btn");
       submitButton.disabled = true;
       submitButton.textContent = "送信中...";
+
+      gtag('event', 'submit_request_click', {
+        event_category: 'form',
+        event_label: 'TOTONOI May LP'
+      });
+
+      fbq('trackCustom', 'SubmitRequestClick');
 
       const formData = new FormData(form);
 
