@@ -13,6 +13,42 @@
 
   <link rel="stylesheet" href="style.css" />
 
+  <!-- GA4 / Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E17Z6DEL7V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E17Z6DEL7V');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '956532880602865');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead');
+
+    gtag('event', 'complete_request', {
+      event_category: 'lead',
+      event_label: 'TOTONOI May LP'
+    });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=956532880602865&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
     .thanks-page {
       min-height: 100vh;
@@ -186,10 +222,10 @@
       </div>
 
       <div class="thanks-actions">
-        <a class="thanks-btn thanks-btn-primary" href="index.html">
+        <a class="thanks-btn thanks-btn-primary" href="index.html" onclick="gtag('event', 'click_back_to_lp'); fbq('trackCustom', 'ClickBackToLp');">
           LPに戻る
         </a>
-        <a class="thanks-btn thanks-btn-secondary" href="https://www.yamanashi-sauna-glamping.com/" target="_blank" rel="noopener noreferrer">
+        <a class="thanks-btn thanks-btn-secondary" href="https://www.yamanashi-sauna-glamping.com/" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click_official_site'); fbq('trackCustom', 'ClickOfficialSite');">
           公式サイトを見る
         </a>
       </div>
