@@ -1,368 +1,28 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>予約リクエスト｜TOTONOI富士山中湖 5月限定直前割</title>
-  <meta name="description" content="TOTONOI富士山中湖 5月限定直前割の予約リクエストフォームです。">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>空室リクエスト｜TOTONOI富士山中湖 5月限定直前割</title>
+  <meta name="description" content="TOTONOI富士山中湖 5月限定直前割の空室リクエストフォームです。" />
 
-  <style>
-    .request-page {
-      background: var(--cream);
-      min-height: 100vh;
-      padding-bottom: 90px;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet" />
 
-    .request-hero {
-      padding: 90px 0 72px;
-      background:
-        linear-gradient(120deg, rgba(11,25,19,0.80), rgba(11,25,19,0.48)),
-        url("images/hero-night-fuji-dome.webp") center center / cover no-repeat;
-      color: #fff;
-      text-align: center;
-    }
-
-    .request-hero h1 {
-      margin: 0;
-      font-family: "Noto Serif JP", serif;
-      font-size: clamp(32px, 5vw, 52px);
-      line-height: 1.45;
-    }
-
-    .request-hero p {
-      max-width: 760px;
-      margin: 18px auto 0;
-      color: rgba(255,255,255,0.92);
-    }
-
-    .request-wrap {
-      width: min(980px, calc(100% - 32px));
-      margin: -36px auto 0;
-      background: #fff;
-      border-radius: 28px;
-      padding: 38px;
-      box-shadow: var(--shadow);
-      position: relative;
-      z-index: 2;
-    }
-
-    .request-note {
-      background: #f7f3ec;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 22px;
-      margin-bottom: 28px;
-      color: var(--text);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .request-note strong {
-      color: var(--green);
-      font-size: 16px;
-    }
-
-    .discount-note {
-      background: linear-gradient(135deg, #16352b, #25473b);
-      color: #fff;
-      border-radius: 20px;
-      padding: 22px;
-      margin-bottom: 28px;
-      line-height: 1.9;
-    }
-
-    .discount-note strong {
-      color: #f5d18b;
-      font-size: 18px;
-    }
-
-    .request-form {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .form-section {
-      grid-column: 1 / -1;
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: #fff;
-    }
-
-    .form-section.soft {
-      background: #fcfaf6;
-    }
-
-    .form-section h2 {
-      margin: 0 0 8px;
-      font-family: "Noto Serif JP", serif;
-      font-size: 25px;
-      color: var(--green);
-    }
-
-    .form-section-lead {
-      margin: 0 0 22px;
-      color: var(--subtext);
-      font-size: 14px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .form-group.full {
-      grid-column: 1 / -1;
-    }
-
-    .form-group label {
-      font-weight: 800;
-      color: var(--green);
-      font-size: 14px;
-    }
-
-    .form-group label span,
-    .required {
-      display: inline-block;
-      margin-left: 6px;
-      color: #fff;
-      background: var(--gold);
-      border-radius: 999px;
-      padding: 2px 8px;
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 13px 14px;
-      font: inherit;
-      background: #fff;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .check-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .check-card {
-      position: relative;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #fff;
-      cursor: pointer;
-    }
-
-    .check-card input {
-      width: auto;
-      margin-top: 6px;
-      transform: scale(1.2);
-    }
-
-    .check-title {
-      display: block;
-      font-weight: 800;
-      color: var(--green);
-      line-height: 1.5;
-    }
-
-    .check-price {
-      display: block;
-      margin-top: 4px;
-      color: var(--gold);
-      font-weight: 800;
-    }
-
-    .check-desc {
-      display: block;
-      margin-top: 4px;
-      color: var(--subtext);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .sauna-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 10px;
-      margin-top: 16px;
-    }
-
-    .sauna-table th {
-      text-align: center;
-      color: var(--text);
-      font-weight: 700;
-      padding: 10px;
-      white-space: nowrap;
-    }
-
-    .sauna-table th:first-child {
-      text-align: left;
-    }
-
-    .sauna-table td {
-      background: #f7f7f7;
-      padding: 18px 14px;
-      text-align: center;
-    }
-
-    .sauna-table td:first-child {
-      text-align: left;
-      border-radius: 12px 0 0 12px;
-      font-weight: 800;
-      color: var(--green);
-      width: 28%;
-    }
-
-    .sauna-table td:last-child {
-      border-radius: 0 12px 12px 0;
-    }
-
-    .sauna-table input[type="radio"] {
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-      accent-color: var(--green);
-    }
-
-    .sauna-none {
-      margin-top: 16px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      color: var(--green);
-    }
-
-    .sauna-none input {
-      width: 20px;
-      height: 20px;
-      accent-color: var(--green);
-    }
-
-    .submit-area {
-      grid-column: 1 / -1;
-      text-align: center;
-      margin-top: 8px;
-    }
-
-    .submit-btn {
-      border: none;
-      cursor: pointer;
-      min-width: 320px;
-      min-height: 60px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #c5a15c, #a88241);
-      color: #fff;
-      font-size: 16px;
-      font-weight: 800;
-      box-shadow: 0 14px 30px rgba(169, 130, 65, 0.25);
-    }
-
-    .submit-btn:disabled {
-      opacity: 0.65;
-      cursor: not-allowed;
-    }
-
-    .thanks-box {
-      text-align: center;
-      padding: 34px 10px;
-    }
-
-    .thanks-box h2 {
-      font-family: "Noto Serif JP", serif;
-      color: var(--green);
-      font-size: 32px;
-      margin: 0 0 16px;
-    }
-
-    .thanks-box p {
-      color: var(--subtext);
-    }
-
-    .back-link {
-      display: inline-flex;
-      margin-top: 20px;
-      padding: 13px 24px;
-      border-radius: 999px;
-      background: var(--green);
-      color: #fff;
-      font-weight: 800;
-    }
-
-    @media (max-width: 768px) {
-      .request-wrap {
-        padding: 24px 18px;
-      }
-
-      .request-form,
-      .section-grid,
-      .check-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .form-section {
-        padding: 22px 16px;
-      }
-
-      .sauna-table {
-        font-size: 13px;
-      }
-
-      .sauna-table th {
-        padding: 8px 4px;
-      }
-
-      .sauna-table td {
-        padding: 14px 6px;
-      }
-
-      .sauna-table td:first-child {
-        width: 34%;
-      }
-
-      .submit-btn {
-        width: 100%;
-        min-width: auto;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <main class="request-page">
+
     <section class="request-hero">
       <div class="container">
-        <p class="hero-badge">このページ限定</p>
-        <h1>5月限定直前割<br>予約リクエスト</h1>
+        <p class="eyebrow">THIS PAGE ONLY / MAY LIMITED</p>
+        <h1>20%OFFで<br />空室リクエスト</h1>
         <p>
-          フォーム送信時点では予約確定ではありません。<br>
+          入力は約1分。送信時点では予約確定ではありません。<br />
           スタッフが空室状況を確認し、空室がある場合のみ正式なご案内を差し上げます。
         </p>
       </div>
@@ -370,79 +30,30 @@
 
     <section class="request-wrap">
       <div class="discount-note">
-        <strong>表示金額について</strong><br>
-        このフォーム内に記載している宿泊料金・食事・サウナ・オプション等の金額は、すべて定価での金額です。<br>
+        <strong>表示金額について</strong><br />
+        このフォーム内に記載している宿泊料金・食事・サウナ・オプション等の金額は、すべて定価での金額です。<br />
         本キャンペーン対象の場合、最終的なご請求総額より20%OFFにてご案内いたします。
       </div>
 
       <div class="request-note">
-        <strong>ご確認ください</strong><br>
-        ・本キャンペーンは5月宿泊かつ土曜日以外の日程が対象です。<br>
-        ・本フォーム送信時点では、ご予約は確定しておりません。<br>
-        ・スタッフが空室状況を確認し、空室がある場合のみ正式なご案内を差し上げます。<br>
-        ・現地決済のみとなります。<br>
+        <strong>ご確認ください</strong><br />
+        ・本キャンペーンは5月宿泊かつ土曜日以外の日程が対象です。<br />
+        ・本フォーム送信時点では、ご予約は確定しておりません。<br />
+        ・スタッフが空室状況を確認し、空室がある場合のみ正式なご案内を差し上げます。<br />
+        ・現地決済のみとなります。<br />
         ・キャンセル料は通常通り、30日前〜8日前：50％、7日前〜当日：100％が発生します。
       </div>
 
       <form id="requestForm" class="request-form" action="ここにGASのURLを入れる" method="POST">
 
         <div class="form-section">
-          <h2>お客様情報</h2>
-          <p class="form-section-lead">代表者様の情報をご入力ください。</p>
+          <h2>まずは希望内容</h2>
+          <p class="form-section-lead">日程・人数・お部屋を選択してください。</p>
 
           <div class="section-grid">
-            <div class="form-group">
-              <label>SNSアカウント名 <span>必須</span></label>
-              <input type="text" name="sns_account" required placeholder="@example">
-            </div>
-
             <div class="form-group">
               <label>ご予約希望日 <span>必須</span></label>
-              <input type="date" name="checkin" required>
-            </div>
-
-            <div class="form-group">
-              <label>ご氏名 <span>必須</span></label>
-              <input type="text" name="name" required placeholder="山田 太郎">
-            </div>
-
-            <div class="form-group">
-              <label>メールアドレス <span>必須</span></label>
-              <input type="email" name="email" required placeholder="example@example.com">
-            </div>
-
-            <div class="form-group">
-              <label>生年月日 <span>必須</span></label>
-              <input type="date" name="birthday" required>
-            </div>
-
-            <div class="form-group">
-              <label>電話番号 <span>必須</span></label>
-              <input type="tel" name="tel" required placeholder="090-0000-0000">
-            </div>
-
-            <div class="form-group full">
-              <label>ご住所 <span>必須</span></label>
-              <input type="text" name="address" required placeholder="都道府県・市区町村・番地・建物名">
-            </div>
-          </div>
-        </div>
-
-        <div class="form-section soft">
-          <h2>宿泊内容</h2>
-          <p class="form-section-lead">ご希望のお部屋・人数をご選択ください。</p>
-
-          <div class="section-grid">
-            <div class="form-group">
-              <label>ご希望のお部屋</label>
-              <select name="room_type">
-                <option value="">選択してください</option>
-                <option value="シングルドーム">シングルドーム</option>
-                <option value="ドッグランドーム">ドッグランドーム</option>
-                <option value="コネクトドーム">コネクトドーム</option>
-                <option value="ドッグコテージ">ドッグコテージ</option>
-                <option value="未定・おまかせ">未定・おまかせ</option>
-              </select>
+              <input type="date" name="checkin" required />
             </div>
 
             <div class="form-group">
@@ -458,6 +69,18 @@
             </div>
 
             <div class="form-group">
+              <label>ご希望のお部屋</label>
+              <select name="room_type">
+                <option value="">選択してください</option>
+                <option value="シングルドーム">シングルドーム</option>
+                <option value="ドッグランドーム">ドッグランドーム</option>
+                <option value="コネクトドーム">コネクトドーム</option>
+                <option value="ドッグコテージ">ドッグコテージ</option>
+                <option value="未定・おまかせ">未定・おまかせ</option>
+              </select>
+            </div>
+
+            <div class="form-group">
               <label>愛犬同伴</label>
               <select name="dog">
                 <option value="">選択してください</option>
@@ -469,7 +92,7 @@
           </div>
         </div>
 
-        <div class="form-section">
+        <div class="form-section soft">
           <h2>食事プラン</h2>
           <p class="form-section-lead">
             ご希望の食事内容をご選択ください。朝食のみ追加したい場合は、朝ごはんにチェックを入れてください。
@@ -477,7 +100,7 @@
 
           <div class="check-grid">
             <label class="check-card">
-              <input type="radio" name="dinner_plan" value="豪華グランピングBBQ 8,800円/名">
+              <input type="radio" name="dinner_plan" value="豪華グランピングBBQ 8,800円/名" />
               <span>
                 <span class="check-title">【夕食】豪華グランピングBBQ</span>
                 <span class="check-price">8,800円 / 名</span>
@@ -485,7 +108,7 @@
             </label>
 
             <label class="check-card">
-              <input type="radio" name="dinner_plan" value="カジュアルグランピングBBQ 5,500円/名">
+              <input type="radio" name="dinner_plan" value="カジュアルグランピングBBQ 5,500円/名" />
               <span>
                 <span class="check-title">【夕食】カジュアルグランピングBBQ</span>
                 <span class="check-price">5,500円 / 名</span>
@@ -493,7 +116,7 @@
             </label>
 
             <label class="check-card">
-              <input type="radio" name="dinner_plan" value="素泊まり">
+              <input type="radio" name="dinner_plan" value="素泊まり" />
               <span>
                 <span class="check-title">素泊まり</span>
                 <span class="check-desc">持ち込みBBQをご希望の方は、オプションでガスグリルをご選択ください。</span>
@@ -501,7 +124,7 @@
             </label>
 
             <label class="check-card">
-              <input type="checkbox" name="breakfast" value="朝ごはん 2,200円/名">
+              <input type="checkbox" name="breakfast" value="朝ごはん 2,200円/名" />
               <span>
                 <span class="check-title">朝ごはん</span>
                 <span class="check-price">2,200円 / 名</span>
@@ -510,19 +133,20 @@
           </div>
         </div>
 
-        <div class="form-section soft">
+        <div class="form-section">
           <h2>サウナ</h2>
           <p class="form-section-lead">
-            ご希望貸切サウナをご選択ください。枠に制限がございますため、1組1枠のみとなります。<br>
-            サウナの種類は<a href="https://www.yamanashi-sauna-glamping.com/sauna/" target="_blank" rel="noopener noreferrer" style="color:#0b62c4;text-decoration:underline;">こちら</a>
+            ご希望貸切サウナをご選択ください。枠に制限がございますため、1組1枠のみとなります。<br />
+            サウナの種類は
+            <a href="https://www.yamanashi-sauna-glamping.com/sauna/" target="_blank" rel="noopener noreferrer" style="color:#0b62c4;text-decoration:underline;">こちら</a>
           </p>
 
-          <input type="hidden" name="sauna_price_note" value="サウナ 1枠 5,000円">
+          <input type="hidden" name="sauna_price_note" value="サウナ 1枠 5,000円" />
 
           <table class="sauna-table">
             <thead>
               <tr>
-                <th>サウナ<br>1枠5,000円</th>
+                <th>サウナ<br />1枠5,000円</th>
                 <th>15:30〜17:00</th>
                 <th>17:30〜19:00</th>
                 <th>19:30〜21:00</th>
@@ -531,26 +155,26 @@
             <tbody>
               <tr>
                 <td>イグルーサウナ</td>
-                <td><input type="radio" name="sauna" value="イグルーサウナ 15:30〜17:00"></td>
-                <td><input type="radio" name="sauna" value="イグルーサウナ 17:30〜19:00"></td>
-                <td><input type="radio" name="sauna" value="イグルーサウナ 19:30〜21:00"></td>
+                <td><input type="radio" name="sauna" value="イグルーサウナ 15:30〜17:00" /></td>
+                <td><input type="radio" name="sauna" value="イグルーサウナ 17:30〜19:00" /></td>
+                <td><input type="radio" name="sauna" value="イグルーサウナ 19:30〜21:00" /></td>
               </tr>
               <tr>
                 <td>アセマサウナ</td>
-                <td><input type="radio" name="sauna" value="アセマサウナ 15:30〜17:00"></td>
-                <td><input type="radio" name="sauna" value="アセマサウナ 17:30〜19:00"></td>
-                <td><input type="radio" name="sauna" value="アセマサウナ 19:30〜21:00"></td>
+                <td><input type="radio" name="sauna" value="アセマサウナ 15:30〜17:00" /></td>
+                <td><input type="radio" name="sauna" value="アセマサウナ 17:30〜19:00" /></td>
+                <td><input type="radio" name="sauna" value="アセマサウナ 19:30〜21:00" /></td>
               </tr>
             </tbody>
           </table>
 
           <label class="sauna-none">
-            <input type="radio" name="sauna" value="サウナ希望なし">
+            <input type="radio" name="sauna" value="サウナ希望なし" />
             サウナは希望しない
           </label>
         </div>
 
-        <div class="form-section">
+        <div class="form-section soft">
           <h2>オプション</h2>
           <p class="form-section-lead">
             ご希望のオプションがございましたらご選択ください。料金は定価表記です。
@@ -558,7 +182,7 @@
 
           <div class="check-grid">
             <label class="check-card">
-              <input type="checkbox" name="options" value="ガスグリルレンタル">
+              <input type="checkbox" name="options" value="ガスグリルレンタル" />
               <span>
                 <span class="check-title">ガスグリルレンタル</span>
                 <span class="check-desc">素泊まりで持ち込みBBQをしたい方向け</span>
@@ -566,7 +190,7 @@
             </label>
 
             <label class="check-card">
-              <input type="checkbox" name="options" value="アニバーサリーショートケーキ 4号 +3,900円">
+              <input type="checkbox" name="options" value="アニバーサリーショートケーキ 4号 +3,900円" />
               <span>
                 <span class="check-title">アニバーサリーショートケーキ 4号</span>
                 <span class="check-price">+ 3,900円</span>
@@ -574,7 +198,7 @@
             </label>
 
             <label class="check-card">
-              <input type="checkbox" name="options" value="アニバーサリーショートケーキ 5号 +5,100円">
+              <input type="checkbox" name="options" value="アニバーサリーショートケーキ 5号 +5,100円" />
               <span>
                 <span class="check-title">アニバーサリーショートケーキ 5号</span>
                 <span class="check-price">+ 5,100円</span>
@@ -582,7 +206,7 @@
             </label>
 
             <label class="check-card">
-              <input type="checkbox" name="options" value="Birthday バルーン ピンク +2,200円">
+              <input type="checkbox" name="options" value="Birthday バルーン ピンク +2,200円" />
               <span>
                 <span class="check-title">Birthday バルーン ピンク</span>
                 <span class="check-price">+ 2,200円</span>
@@ -590,7 +214,7 @@
             </label>
 
             <label class="check-card">
-              <input type="checkbox" name="options" value="Birthday バルーン ブラック +2,200円">
+              <input type="checkbox" name="options" value="Birthday バルーン ブラック +2,200円" />
               <span>
                 <span class="check-title">Birthday バルーン ブラック</span>
                 <span class="check-price">+ 2,200円</span>
@@ -598,12 +222,49 @@
             </label>
 
             <label class="check-card">
-              <input type="checkbox" name="options" value="ペット用birthdayセット +3,000円">
+              <input type="checkbox" name="options" value="ペット用birthdayセット +3,000円" />
               <span>
                 <span class="check-title">ペット用birthdayセット</span>
                 <span class="check-price">+ 3,000円</span>
               </span>
             </label>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2>お客様情報</h2>
+          <p class="form-section-lead">最後に代表者様の情報をご入力ください。</p>
+
+          <div class="section-grid">
+            <div class="form-group">
+              <label>SNSアカウント名 <span>必須</span></label>
+              <input type="text" name="sns_account" required placeholder="@example" />
+            </div>
+
+            <div class="form-group">
+              <label>ご氏名 <span>必須</span></label>
+              <input type="text" name="name" required placeholder="山田 太郎" />
+            </div>
+
+            <div class="form-group">
+              <label>メールアドレス <span>必須</span></label>
+              <input type="email" name="email" required placeholder="example@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label>電話番号 <span>必須</span></label>
+              <input type="tel" name="tel" required placeholder="090-0000-0000" />
+            </div>
+
+            <div class="form-group">
+              <label>生年月日 <span>必須</span></label>
+              <input type="date" name="birthday" required />
+            </div>
+
+            <div class="form-group full">
+              <label>ご住所 <span>必須</span></label>
+              <input type="text" name="address" required placeholder="都道府県・市区町村・番地・建物名" />
+            </div>
           </div>
         </div>
 
@@ -620,7 +281,7 @@
         </div>
 
         <div class="submit-area">
-          <button type="submit" class="submit-btn">予約リクエストを送信する</button>
+          <button type="submit" class="submit-btn">空室リクエストを送信する</button>
         </div>
       </form>
     </section>
@@ -646,7 +307,7 @@
       .then(() => {
         form.parentElement.innerHTML = `
           <div class="thanks-box">
-            <h2>予約リクエストを受け付けました</h2>
+            <h2>空室リクエストを受け付けました</h2>
             <p>
               ご入力いただいた内容をスタッフが確認し、空室状況を確認のうえご連絡いたします。<br>
               この時点では予約確定ではございません。
@@ -657,7 +318,7 @@
       })
       .catch(() => {
         submitButton.disabled = false;
-        submitButton.textContent = "予約リクエストを送信する";
+        submitButton.textContent = "空室リクエストを送信する";
         alert("送信に失敗しました。時間をおいて再度お試しください。");
       });
     });
