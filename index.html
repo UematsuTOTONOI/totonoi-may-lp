@@ -12,6 +12,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- GA4 / Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E17Z6DEL7V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E17Z6DEL7V');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '956532880602865');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=956532880602865&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 
 <body>
@@ -29,7 +59,7 @@
           <a href="#experience">過ごし方</a>
           <a href="#rooms">お部屋・サウナ</a>
           <a href="#discount">20%OFF</a>
-          <a href="request.html" class="nav-cta">予約リクエスト</a>
+          <a href="request.html" class="nav-cta" onclick="gtag('event', 'click_request_nav'); fbq('trackCustom', 'ClickRequestNav');">予約リクエスト</a>
         </nav>
       </div>
     </header>
@@ -57,10 +87,10 @@
             </p>
 
             <div class="hero-actions">
-              <a href="request.html" class="btn btn-primary">
+              <a href="request.html" class="btn btn-primary" onclick="gtag('event', 'click_request_index'); fbq('trackCustom', 'ClickRequestIndex');">
                 20%OFFで予約リクエスト
               </a>
-              <a href="#experience" class="btn btn-glass">
+              <a href="#experience" class="btn btn-glass" onclick="gtag('event', 'click_view_experience'); fbq('trackCustom', 'ClickViewExperience');">
                 どんな旅になるか見る
               </a>
             </div>
@@ -276,7 +306,7 @@
                   <li>コネクトドーム</li>
                   <li>ドッグコテージ</li>
                 </ul>
-                <a href="https://www.yamanashi-sauna-glamping.com/room/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.yamanashi-sauna-glamping.com/room/" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click_room_page'); fbq('trackCustom', 'ClickRoomPage');">
                   お部屋紹介ページを見る
                 </a>
               </div>
@@ -293,7 +323,7 @@
                   <li>15:30〜 / 17:30〜 / 19:30〜</li>
                   <li>1枠 5,000円</li>
                 </ul>
-                <a href="https://www.yamanashi-sauna-glamping.com/sauna/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.yamanashi-sauna-glamping.com/sauna/" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click_sauna_page'); fbq('trackCustom', 'ClickSaunaPage');">
                   サウナ紹介ページを見る
                 </a>
               </div>
@@ -393,7 +423,7 @@
             今このページを見ている方だけ、20%OFFで予約リクエストできます。
           </p>
 
-          <a href="request.html" class="btn btn-primary">
+          <a href="request.html" class="btn btn-primary" onclick="gtag('event', 'click_request_final'); fbq('trackCustom', 'ClickRequestFinal');">
             20%OFFで予約リクエスト
           </a>
 
@@ -406,7 +436,7 @@
     </main>
 
     <div class="sticky-cta">
-      <a href="request.html">
+      <a href="request.html" onclick="gtag('event', 'click_request_sticky'); fbq('trackCustom', 'ClickRequestSticky');">
         <span>このページ限定</span>
         20%OFFで予約リクエスト
       </a>
