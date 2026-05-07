@@ -1,18 +1,19 @@
 :root {
   --green: #16352b;
-  --green-deep: #0d231c;
-  --green-soft: #25473b;
+  --green-deep: #0b2019;
+  --green-soft: #23483b;
   --gold: #b99858;
-  --gold-soft: #d8c08a;
-  --cream: #f7f3ec;
-  --cream-light: #fcfaf6;
+  --gold-light: #ead5a4;
+  --cream: #f7f2e9;
+  --cream-2: #fcfaf6;
   --white: #ffffff;
-  --text: #1f2a25;
-  --subtext: #5e6b65;
-  --border: #e4ddd0;
-  --shadow: 0 18px 45px rgba(16, 32, 24, 0.08);
-  --radius-lg: 28px;
-  --radius-md: 20px;
+  --text: #1d2923;
+  --muted: #66736d;
+  --border: #e6ddcf;
+  --shadow: 0 22px 60px rgba(20, 35, 28, 0.1);
+  --radius-xl: 34px;
+  --radius-lg: 26px;
+  --radius-md: 18px;
 }
 
 * {
@@ -38,8 +39,8 @@ img {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 .lp-wrapper {
@@ -51,410 +52,545 @@ a {
   margin: 0 auto;
 }
 
-/* ===== topbar ===== */
+/* Header */
 
-.topbar {
+.site-header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   padding: 22px 0;
 }
 
-.topbar-inner {
+.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.topbar-logo {
+.brand {
   color: #fff;
-  font-size: 13px;
-  letter-spacing: 0.16em;
-  font-weight: 700;
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.1;
 }
 
-.topbar-link {
-  color: #fff;
-  font-size: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.55);
-  padding-bottom: 2px;
+.brand-main {
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  font-size: 17px;
 }
 
-/* ===== hero ===== */
+.brand-sub {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  opacity: 0.78;
+  margin-top: 4px;
+}
 
-.hero {
-  position: relative;
-  min-height: 760px;
+.header-nav {
   display: flex;
   align-items: center;
-  background:
-    linear-gradient(90deg, rgba(10,23,18,0.78) 0%, rgba(10,23,18,0.58) 42%, rgba(10,23,18,0.18) 100%),
-    url("images/hero-night-fuji-dome.webp") center center / cover no-repeat;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(8,14,12,0.08), rgba(8,14,12,0.18));
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 130px 0 105px;
+  gap: 22px;
   color: #fff;
-  max-width: 690px;
+  font-size: 14px;
+  font-weight: 700;
 }
 
-.hero-badge {
-  display: inline-block;
-  margin: 0 0 20px;
-  padding: 8px 17px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.28);
+.nav-cta {
+  padding: 10px 18px;
   border-radius: 999px;
-  font-size: 13px;
-  letter-spacing: 0.09em;
-  font-weight: 700;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   backdrop-filter: blur(8px);
 }
 
-.hero-subtitle {
-  margin: 0 0 10px;
-  color: var(--gold-soft);
-  font-size: 15px;
-  letter-spacing: 0.17em;
-  font-weight: 800;
+/* Hero */
+
+.hero {
+  position: relative;
+  min-height: 820px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("images/hero-night-fuji-dome.webp") center center / cover no-repeat;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(9, 24, 18, 0.86) 0%, rgba(9, 24, 18, 0.68) 44%, rgba(9, 24, 18, 0.22) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.34));
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 330px;
+  gap: 56px;
+  align-items: center;
+  padding: 140px 0 100px;
+}
+
+.hero-copy {
+  max-width: 720px;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 12px;
+  color: var(--gold-light);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  font-weight: 900;
 }
 
 .hero h1 {
   margin: 0;
   font-family: "Noto Serif JP", serif;
-  font-size: clamp(44px, 5vw, 70px);
-  line-height: 1.24;
-  letter-spacing: 0.025em;
-  font-weight: 700;
-}
-
-.hero h1 span {
-  color: #f5d18b;
+  font-size: clamp(46px, 5.6vw, 76px);
+  line-height: 1.22;
+  letter-spacing: 0.015em;
 }
 
 .hero-lead {
-  margin: 24px 0 0;
-  font-size: 17px;
+  max-width: 650px;
+  margin: 26px 0 0;
+  font-size: 18px;
   color: rgba(255,255,255,0.92);
 }
 
-.hero-offer {
-  margin-top: 34px;
-  display: inline-block;
-  background: rgba(255,255,255,0.96);
-  color: var(--green-deep);
-  padding: 24px 34px;
-  border-radius: 24px;
-  box-shadow: 0 20px 54px rgba(0,0,0,0.18);
-}
-
-.offer-label {
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  font-weight: 800;
-  color: var(--gold);
-}
-
-.offer-main {
-  font-family: "Noto Serif JP", serif;
-  font-size: clamp(46px, 5vw, 66px);
-  line-height: 1.1;
-  color: var(--green);
-  margin-top: 8px;
-}
-
-.offer-note {
-  margin-top: 6px;
-  font-size: 14px;
-  color: var(--subtext);
-}
-
-.hero-buttons {
+.hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 32px;
+  margin-top: 34px;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 230px;
   min-height: 58px;
-  padding: 0 26px;
+  padding: 0 28px;
   border-radius: 999px;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 900;
   transition: 0.25s ease;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #c5a15c, #a88241);
+  background: linear-gradient(135deg, #c8a661, #9f7a38);
   color: #fff;
-  box-shadow: 0 14px 30px rgba(169, 130, 65, 0.26);
+  box-shadow: 0 16px 34px rgba(161, 124, 57, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
 }
 
-.btn-secondary {
-  background: rgba(255,255,255,0.09);
-  border: 1px solid rgba(255,255,255,0.28);
+.btn-glass {
+  background: rgba(255,255,255,0.1);
   color: #fff;
+  border: 1px solid rgba(255,255,255,0.26);
   backdrop-filter: blur(8px);
 }
 
-/* ===== notice ===== */
-
-.notice-strip {
-  padding: 0 0 20px;
-  margin-top: -46px;
-  position: relative;
-  z-index: 4;
+.micro-copy {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: rgba(255,255,255,0.78);
 }
 
-.notice-box {
-  background: #fff;
-  border-radius: var(--radius-lg);
-  padding: 34px 40px;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(185,152,88,0.2);
+.micro-copy.light {
+  color: rgba(255,255,255,0.78);
 }
 
-.notice-box h2 {
-  margin: 0 0 12px;
-  font-family: "Noto Serif JP", serif;
-  font-size: 25px;
+.hero-card {
+  background: rgba(255,255,255,0.95);
   color: var(--green);
+  border-radius: var(--radius-xl);
+  padding: 32px 30px;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.22);
+  backdrop-filter: blur(10px);
 }
 
-.notice-box p {
-  margin: 0;
-  color: var(--text);
-}
-
-/* ===== sections ===== */
-
-.section {
-  padding: 86px 0;
-}
-
-.section-soft {
-  background: var(--cream-light);
-}
-
-.section-dark {
-  background: linear-gradient(180deg, var(--green), var(--green-deep));
-  color: #fff;
-}
-
-.section-heading {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 42px;
-}
-
-.section-heading.white h2,
-.section-heading.white p,
-.section-heading.white .section-label {
-  color: #fff;
-}
-
-.section-label {
+.hero-card-label {
   margin: 0 0 10px;
   color: var(--gold);
   font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  font-weight: 900;
+  letter-spacing: 0.1em;
 }
 
-.section-heading h2 {
+.discount-big {
+  font-family: "Noto Serif JP", serif;
+  line-height: 1;
+  color: var(--green);
+  margin-bottom: 14px;
+}
+
+.discount-big span {
+  font-size: 88px;
+  letter-spacing: -0.06em;
+}
+
+.discount-big {
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.hero-card-text {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* Quick */
+
+.quick {
+  position: relative;
+  z-index: 4;
+  margin-top: -54px;
+}
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #fff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.quick-item {
+  padding: 30px 30px;
+  border-right: 1px solid var(--border);
+}
+
+.quick-item:last-child {
+  border-right: none;
+}
+
+.quick-item span {
+  display: block;
+  color: var(--gold);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.quick-item strong {
+  display: block;
+  color: var(--green);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.quick-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Sections */
+
+.section {
+  padding: 96px 0;
+}
+
+.section-head {
+  max-width: 780px;
+  margin: 0 auto 46px;
+  text-align: center;
+}
+
+.section-head.white {
+  color: #fff;
+}
+
+.section-head h2,
+.intro-copy h2,
+.discount h2,
+.final h2 {
   margin: 0;
   font-family: "Noto Serif JP", serif;
-  font-size: clamp(30px, 3vw, 42px);
+  font-size: clamp(32px, 4vw, 50px);
   line-height: 1.45;
   color: var(--green);
 }
 
-.section-text {
-  margin: 16px 0 0;
-  color: var(--subtext);
-  font-size: 15px;
+.section-head.white h2 {
+  color: #fff;
 }
 
-/* ===== feature ===== */
+.section-head p,
+.intro-copy p,
+.discount p,
+.final p {
+  color: var(--muted);
+  margin: 18px 0 0;
+}
 
-.feature-grid {
+.section-head.white p {
+  color: rgba(255,255,255,0.84);
+}
+
+/* Intro */
+
+.intro-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 56px;
+  align-items: center;
 }
 
-.feature-card {
-  background: #fff;
-  border-radius: var(--radius-md);
-  padding: 30px 28px;
-  box-shadow: var(--shadow);
-  min-height: 245px;
-}
-
-.feature-number {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: var(--gold);
-}
-
-.feature-card h3 {
-  margin: 10px 0 10px;
-  font-size: 21px;
-  line-height: 1.5;
-  color: var(--green);
-}
-
-.feature-card p {
-  margin: 0;
-  color: var(--subtext);
-  font-size: 15px;
-}
-
-/* ===== gallery ===== */
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.gallery-card {
-  background: #fff;
-  border-radius: var(--radius-md);
+.intro-photo {
+  border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow);
 }
 
-.gallery-card img {
-  height: 210px;
+.intro-photo img {
+  height: 470px;
 }
 
-.gallery-body {
-  padding: 20px;
+/* Recommend */
+
+.recommend {
+  background: var(--cream-2);
 }
 
-.gallery-body h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
-  line-height: 1.55;
+.recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.recommend-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px;
   color: var(--green);
+  font-weight: 900;
+  box-shadow: 0 12px 30px rgba(20, 35, 28, 0.05);
 }
 
-.gallery-body p {
+/* Experience */
+
+.experience {
+  background:
+    linear-gradient(180deg, rgba(13,35,28,0.94), rgba(13,35,28,0.96)),
+    url("images/garden.webp") center center / cover no-repeat;
+}
+
+.story-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+}
+
+.story-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 22px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  color: #fff;
+}
+
+.story-time {
+  color: var(--gold-light);
+  font-family: "Noto Serif JP", serif;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.story-item h3 {
+  margin: 0 0 6px;
+  font-size: 21px;
+}
+
+.story-item p {
   margin: 0;
-  color: var(--subtext);
-  font-size: 14px;
+  color: rgba(255,255,255,0.82);
 }
 
-/* ===== room sauna panels ===== */
+/* Gallery */
 
-.info-panels {
+.gallery-section {
+  background: var(--cream-2);
+}
+
+.masonry {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr 0.85fr;
+  grid-template-rows: 260px 260px;
+  gap: 20px;
+}
+
+.masonry-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #000;
+}
+
+.masonry-card.large {
+  grid-row: span 2;
+}
+
+.masonry-card.wide {
+  grid-column: span 2;
+}
+
+.masonry-card img {
+  height: 100%;
+  opacity: 0.82;
+  transition: 0.35s ease;
+}
+
+.masonry-card:hover img {
+  transform: scale(1.04);
+  opacity: 0.9;
+}
+
+.masonry-card div {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  color: #fff;
+}
+
+.masonry-card span {
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.masonry-card h3 {
+  margin: 6px 0 0;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+/* Detail */
+
+.detail-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
-.info-panel {
-  display: flex;
-  flex-direction: column;
+.detail-card {
   background: #fff;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow);
 }
 
-.info-panel-image img {
-  height: 280px;
+.detail-card img {
+  height: 300px;
 }
 
-.info-panel-body {
+.detail-body {
   padding: 30px;
 }
 
-.info-kicker {
+.detail-body p {
   margin: 0 0 8px;
-  font-size: 13px;
+  color: var(--gold);
+  font-size: 12px;
   letter-spacing: 0.14em;
-  font-weight: 800;
-  color: var(--gold);
+  font-weight: 900;
 }
 
-.info-panel-body h3 {
-  margin: 0 0 12px;
-  font-size: 27px;
-  font-family: "Noto Serif JP", serif;
+.detail-body h3 {
+  margin: 0 0 16px;
   color: var(--green);
+  font-size: 24px;
+  line-height: 1.5;
 }
 
-.info-panel-body p {
-  margin: 0;
-  color: var(--subtext);
+.detail-body ul {
+  margin: 0 0 20px;
+  padding-left: 18px;
+  color: var(--muted);
 }
 
-.text-link {
-  margin-top: 16px;
+.detail-body a {
   color: var(--green);
-  font-weight: 800;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  font-weight: 900;
+  border-bottom: 1px solid var(--green);
 }
 
-.text-link::after {
-  content: "→";
+/* Discount */
+
+.discount {
+  background: var(--green);
+  color: #fff;
 }
 
-/* ===== option ===== */
-
-.option-grid {
+.discount-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  grid-template-columns: 1fr 420px;
+  gap: 48px;
+  align-items: center;
 }
 
-.option-card {
+.discount h2 {
+  color: #fff;
+}
+
+.discount p {
+  color: rgba(255,255,255,0.82);
+}
+
+.discount-panel {
   background: #fff;
-  border-radius: var(--radius-md);
-  padding: 24px 22px;
-  box-shadow: var(--shadow);
-  min-height: 165px;
-}
-
-.option-card h3 {
-  margin: 0;
-  font-size: 17px;
-  line-height: 1.65;
   color: var(--green);
+  border-radius: var(--radius-xl);
+  padding: 34px;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.18);
 }
 
-.option-price {
-  margin: 18px 0 0;
-  font-size: 26px;
+.discount-number {
   font-family: "Noto Serif JP", serif;
-  color: var(--gold);
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 22px;
 }
 
-/* ===== flow ===== */
+.discount-number span {
+  font-size: 96px;
+  letter-spacing: -0.08em;
+}
+
+.discount-panel ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* Flow */
 
 .flow-grid {
   display: grid;
@@ -464,127 +600,455 @@ a {
 
 .flow-card {
   background: #fff;
-  border-radius: var(--radius-md);
-  padding: 26px 22px;
+  border-radius: var(--radius-lg);
+  padding: 26px;
   box-shadow: var(--shadow);
-  text-align: center;
-  min-height: 220px;
 }
 
-.flow-step {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 14px;
-  border-radius: 50%;
-  background: var(--green);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
+.flow-card span {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
 }
 
 .flow-card h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
+  margin: 10px 0 8px;
   color: var(--green);
+  font-size: 21px;
 }
 
 .flow-card p {
   margin: 0;
-  color: var(--subtext);
+  color: var(--muted);
   font-size: 14px;
 }
 
-/* ===== policy ===== */
+/* Caution */
 
-.policy-box {
-  max-width: 880px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.13);
-  border-radius: var(--radius-lg);
-  padding: 30px 34px;
+.caution {
+  background: var(--cream-2);
 }
 
-.policy-box ul {
+.caution-box {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 38px;
+  box-shadow: var(--shadow);
+}
+
+.caution-box h2 {
+  margin: 0 0 14px;
+  font-family: "Noto Serif JP", serif;
+  color: var(--green);
+  font-size: 30px;
+}
+
+.caution-box p {
+  margin: 0 0 18px;
+  color: var(--text);
+}
+
+.caution-box ul {
   margin: 0;
   padding-left: 18px;
+  color: var(--muted);
 }
 
-.policy-box li {
-  margin-bottom: 10px;
-  color: rgba(255,255,255,0.92);
-}
+/* Final */
 
-/* ===== final ===== */
-
-.final-cta {
-  padding: 100px 0 120px;
-  background:
-    linear-gradient(120deg, rgba(11,25,19,0.78), rgba(11,25,19,0.44)),
-    url("images/fuji-firepit.webp") center center / cover no-repeat;
+.final {
+  position: relative;
   color: #fff;
+  padding: 120px 0 140px;
+  text-align: center;
 }
 
-.final-cta-inner {
-  text-align: center;
+.final-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10,25,19,0.72), rgba(10,25,19,0.82)),
+    url("images/aerial.webp") center center / cover no-repeat;
+}
+
+.final-inner {
+  position: relative;
+  z-index: 2;
   max-width: 760px;
 }
 
-.final-label {
-  margin: 0 0 10px;
-  color: var(--gold-soft);
-  font-size: 13px;
-  letter-spacing: 0.16em;
-  font-weight: 800;
+.final h2 {
+  color: #fff;
 }
 
-.final-cta h2 {
-  margin: 0;
-  font-family: "Noto Serif JP", serif;
-  font-size: clamp(34px, 4vw, 54px);
-  line-height: 1.45;
+.final p {
+  color: rgba(255,255,255,0.88);
 }
 
-.final-cta p {
-  margin: 18px 0 0;
-  color: rgba(255,255,255,0.9);
+.final .btn {
+  margin-top: 30px;
 }
 
-/* ===== sticky ===== */
+/* Sticky CTA */
 
 .sticky-cta {
   position: fixed;
-  right: 28px;
-  bottom: 28px;
+  right: 26px;
+  bottom: 26px;
   z-index: 100;
 }
 
 .sticky-cta a {
   display: block;
-  text-align: center;
-  background: linear-gradient(135deg, #c5a15c, #a88241);
-  color: #fff;
-  font-weight: 800;
-  padding: 15px 24px;
+  min-width: 280px;
+  padding: 14px 22px;
   border-radius: 999px;
-  box-shadow: 0 18px 35px rgba(15, 20, 16, 0.22);
+  text-align: center;
+  color: #fff;
+  font-weight: 900;
+  background: linear-gradient(135deg, #c8a661, #9f7a38);
+  box-shadow: 0 18px 40px rgba(20, 35, 28, 0.24);
 }
 
-/* ===== responsive ===== */
+.sticky-cta span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  opacity: 0.88;
+}
+
+/* Request page */
+
+.request-page {
+  background: var(--cream);
+  min-height: 100vh;
+  padding-bottom: 90px;
+}
+
+.request-hero {
+  padding: 110px 0 80px;
+  background:
+    linear-gradient(120deg, rgba(11,25,19,0.82), rgba(11,25,19,0.5)),
+    url("images/hero-night-fuji-dome.webp") center center / cover no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+.request-hero h1 {
+  margin: 0;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.45;
+}
+
+.request-hero p {
+  max-width: 760px;
+  margin: 18px auto 0;
+  color: rgba(255,255,255,0.9);
+}
+
+.request-wrap {
+  width: min(980px, calc(100% - 32px));
+  margin: -40px auto 0;
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: 38px;
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 2;
+}
+
+.discount-note {
+  background: linear-gradient(135deg, var(--green), var(--green-soft));
+  color: #fff;
+  border-radius: 22px;
+  padding: 24px;
+  margin-bottom: 22px;
+}
+
+.discount-note strong {
+  color: var(--gold-light);
+  font-size: 18px;
+}
+
+.request-note {
+  background: var(--cream-2);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+.request-note strong {
+  color: var(--green);
+}
+
+.request-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.form-section {
+  grid-column: 1 / -1;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: #fff;
+}
+
+.form-section.soft {
+  background: var(--cream-2);
+}
+
+.form-section h2 {
+  margin: 0 0 8px;
+  font-family: "Noto Serif JP", serif;
+  font-size: 26px;
+  color: var(--green);
+}
+
+.form-section-lead {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 900;
+  color: var(--green);
+  font-size: 14px;
+}
+
+.form-group label span {
+  display: inline-block;
+  margin-left: 6px;
+  color: #fff;
+  background: var(--gold);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 11px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 13px 14px;
+  font: inherit;
+  background: #fff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.check-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.check-card input {
+  width: auto;
+  margin-top: 6px;
+  transform: scale(1.18);
+  accent-color: var(--green);
+}
+
+.check-title {
+  display: block;
+  font-weight: 900;
+  color: var(--green);
+  line-height: 1.5;
+}
+
+.check-price {
+  display: block;
+  margin-top: 4px;
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.check-desc {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.sauna-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 16px;
+}
+
+.sauna-table th {
+  text-align: center;
+  color: var(--text);
+  font-weight: 800;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.sauna-table th:first-child {
+  text-align: left;
+}
+
+.sauna-table td {
+  background: #f7f7f7;
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.sauna-table td:first-child {
+  text-align: left;
+  border-radius: 12px 0 0 12px;
+  font-weight: 900;
+  color: var(--green);
+  width: 28%;
+}
+
+.sauna-table td:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+.sauna-table input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  accent-color: var(--green);
+}
+
+.sauna-none {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  color: var(--green);
+}
+
+.sauna-none input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--green);
+}
+
+.submit-area {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.submit-btn {
+  border: none;
+  cursor: pointer;
+  min-width: 320px;
+  min-height: 60px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #c8a661, #9f7a38);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  box-shadow: 0 14px 30px rgba(169, 130, 65, 0.25);
+}
+
+.submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.thanks-box {
+  text-align: center;
+  padding: 34px 10px;
+}
+
+.thanks-box h2 {
+  font-family: "Noto Serif JP", serif;
+  color: var(--green);
+  font-size: 32px;
+  margin: 0 0 16px;
+}
+
+.thanks-box p {
+  color: var(--muted);
+}
+
+.back-link {
+  display: inline-flex;
+  margin-top: 20px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 900;
+}
+
+/* Responsive */
 
 @media (max-width: 1080px) {
-  .gallery-grid,
-  .option-grid,
+  .hero-inner,
+  .intro-grid,
+  .discount-grid,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    max-width: 420px;
+  }
+
+  .recommend-grid,
   .flow-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .info-panels {
-    grid-template-columns: 1fr;
+  .masonry {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
   }
 
-  .info-panel-image img {
+  .masonry-card,
+  .masonry-card.large,
+  .masonry-card.wide {
+    grid-row: auto;
+    grid-column: auto;
     height: 300px;
   }
 }
@@ -594,19 +1058,25 @@ a {
     width: min(100% - 28px, 1120px);
   }
 
-  .topbar-inner {
-    flex-direction: column;
-    gap: 8px;
+  .site-header {
+    padding: 16px 0;
+  }
+
+  .header-nav {
+    display: none;
   }
 
   .hero {
     min-height: auto;
-    background:
-      linear-gradient(180deg, rgba(10,23,18,0.58), rgba(10,23,18,0.78)),
-      url("images/hero-night-fuji-dome.webp") center center / cover no-repeat;
   }
 
-  .hero-content {
+  .hero-shade {
+    background:
+      linear-gradient(180deg, rgba(9, 24, 18, 0.56), rgba(9, 24, 18, 0.86));
+  }
+
+  .hero-inner {
+    display: block;
     padding: 120px 0 90px;
   }
 
@@ -618,12 +1088,7 @@ a {
     font-size: 15px;
   }
 
-  .hero-offer {
-    width: 100%;
-    padding: 22px;
-  }
-
-  .hero-buttons {
+  .hero-actions {
     flex-direction: column;
   }
 
@@ -631,40 +1096,77 @@ a {
     width: 100%;
   }
 
-  .notice-strip {
-    margin-top: -26px;
+  .hero-card {
+    margin-top: 28px;
+    padding: 24px;
   }
 
-  .notice-box {
-    padding: 24px 20px;
+  .discount-big span {
+    font-size: 70px;
   }
 
-  .section {
-    padding: 70px 0;
+  .quick {
+    margin-top: -28px;
   }
 
-  .gallery-grid,
-  .feature-grid,
-  .option-grid,
-  .flow-grid {
+  .quick-grid {
     grid-template-columns: 1fr;
   }
 
-  .feature-card,
-  .flow-card {
-    min-height: auto;
+  .quick-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 24px;
   }
 
-  .gallery-card img {
-    height: 220px;
+  .quick-item:last-child {
+    border-bottom: none;
   }
 
-  .info-panel-body {
-    padding: 24px 20px;
+  .section {
+    padding: 72px 0;
   }
 
-  .option-card {
-    min-height: auto;
+  .intro-photo img,
+  .detail-card img {
+    height: 250px;
+  }
+
+  .recommend-grid,
+  .flow-grid,
+  .check-grid,
+  .section-grid,
+  .request-form {
+    grid-template-columns: 1fr;
+  }
+
+  .story-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .story-time {
+    font-size: 22px;
+  }
+
+  .masonry {
+    grid-template-columns: 1fr;
+  }
+
+  .masonry-card,
+  .masonry-card.large,
+  .masonry-card.wide {
+    height: 260px;
+  }
+
+  .discount-panel,
+  .caution-box,
+  .request-wrap {
+    padding: 24px 18px;
+  }
+
+  .discount-number span {
+    font-size: 74px;
   }
 
   .sticky-cta {
@@ -674,7 +1176,33 @@ a {
   }
 
   .sticky-cta a {
+    min-width: auto;
+    padding: 14px 16px;
     font-size: 14px;
-    padding: 15px 14px;
+  }
+
+  .form-section {
+    padding: 22px 16px;
+  }
+
+  .sauna-table {
+    font-size: 13px;
+  }
+
+  .sauna-table th {
+    padding: 8px 4px;
+  }
+
+  .sauna-table td {
+    padding: 14px 6px;
+  }
+
+  .sauna-table td:first-child {
+    width: 34%;
+  }
+
+  .submit-btn {
+    width: 100%;
+    min-width: auto;
   }
 }
