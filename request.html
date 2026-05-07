@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>空室リクエスト｜TOTONOI富士山中湖 5月限定直前割</title>
-  <meta name="description" content="TOTONOI富士山中湖 5月限定直前割の空室リクエストフォームです。" />
+  <title>予約リクエスト｜TOTONOI富士山中湖 5月限定直前割</title>
+  <meta name="description" content="TOTONOI富士山中湖 5月限定直前割の予約リクエストフォームです。" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
     <section class="request-hero">
       <div class="container">
         <p class="eyebrow">THIS PAGE ONLY / MAY LIMITED</p>
-        <h1>20%OFFで<br />空室リクエスト</h1>
+        <h1><span>20%OFF</span>で<br />予約リクエスト</h1>
         <p>
           入力は約1分。送信時点では予約確定ではありません。<br />
           スタッフが空室状況を確認し、空室がある場合のみ正式なご案内を差し上げます。
@@ -281,7 +281,7 @@
         </div>
 
         <div class="submit-area">
-          <button type="submit" class="submit-btn">空室リクエストを送信する</button>
+          <button type="submit" class="submit-btn">予約リクエストを送信する</button>
         </div>
       </form>
     </section>
@@ -307,7 +307,7 @@
       .then(() => {
         form.parentElement.innerHTML = `
           <div class="thanks-box">
-            <h2>空室リクエストを受け付けました</h2>
+            <h2>予約リクエストを受け付けました</h2>
             <p>
               ご入力いただいた内容をスタッフが確認し、空室状況を確認のうえご連絡いたします。<br>
               この時点では予約確定ではございません。
@@ -318,7 +318,7 @@
       })
       .catch(() => {
         submitButton.disabled = false;
-        submitButton.textContent = "空室リクエストを送信する";
+        submitButton.textContent = "予約リクエストを送信する";
         alert("送信に失敗しました。時間をおいて再度お試しください。");
       });
     });
