@@ -1401,7 +1401,55 @@ textarea {
     font-size: 13.5px;
   }
 
+ /* ===== Sticky CTA 復活・スマホ調整 ===== */
+
+.sticky-cta {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 999;
+}
+
+.sticky-cta a {
+  display: block;
+  min-width: 290px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  text-align: center;
+  color: #fff;
+  font-weight: 900;
+  background: linear-gradient(135deg, #d1ad68, #9f7a38);
+  box-shadow: 0 18px 40px rgba(20, 35, 28, 0.24);
+}
+
+.sticky-cta span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  opacity: 0.88;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 86px;
+  }
+
   .sticky-cta {
-    display: none;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .sticky-cta a {
+    min-width: auto;
+    width: 100%;
+    padding: 13px 14px;
+    font-size: 14px;
+    border-radius: 999px;
+  }
+
+  .sticky-cta span {
+    font-size: 10px;
+    margin-bottom: 2px;
   }
 }
