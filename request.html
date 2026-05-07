@@ -3,475 +3,319 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>予約リクエスト｜5月限定 TOTONOI富士山中湖</title>
-  <style>
-    :root {
-      --green: #244334;
-      --green2: #315744;
-      --beige: #f5efe3;
-      --gold: #c8a65a;
-      --brown: #3b3026;
-      --white: #ffffff;
-      --red: #b24b3f;
-      --shadow: 0 18px 45px rgba(0,0,0,0.14);
-    }
 
-    * {
-      box-sizing: border-box;
-    }
+  <title>予約リクエスト｜TOTONOI富士山中湖 5月限定直前割</title>
+  <meta name="description" content="TOTONOI富士山中湖 5月限定直前割の予約リクエストフォームです。" />
 
-    body {
-      margin: 0;
-      font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
-      background: var(--beige);
-      color: var(--brown);
-      line-height: 1.75;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet" />
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      min-height: 100svh;
-      padding: 22px 18px 46px;
-      background:
-        linear-gradient(rgba(36,67,52,0.82), rgba(36,67,52,0.82)),
-        url("https://uematsutotonoi.github.io/totonoi-may-lp/images/hero.jpg") center/cover no-repeat fixed;
-    }
-
-    .header {
-      max-width: 900px;
-      margin: 0 auto 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: #fff;
-    }
-
-    .logo {
-      color: #fff;
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      font-weight: 800;
-      line-height: 1.2;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.35);
-    }
-
-    .back {
-      border: 1px solid rgba(255,255,255,0.72);
-      border-radius: 999px;
-      padding: 8px 13px;
-      font-size: 12px;
-      font-weight: 800;
-      background: rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-    }
-
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .intro,
-    .form-box {
-      background: rgba(255,255,255,0.96);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .intro {
-      padding: 28px 24px;
-      position: sticky;
-      top: 20px;
-    }
-
-    .label {
-      display: inline-flex;
-      background: #fff1c9;
-      color: var(--green);
-      border-radius: 999px;
-      padding: 7px 12px;
-      font-size: 12px;
-      font-weight: 900;
-      margin-bottom: 16px;
-    }
-
-    .intro h1 {
-      margin: 0;
-      color: var(--green);
-      font-size: clamp(25px, 5vw, 36px);
-      line-height: 1.28;
-      letter-spacing: 0.02em;
-    }
-
-    .intro p {
-      margin: 16px 0 0;
-      color: #5d5144;
-      font-size: 14px;
-    }
-
-    .price {
-      margin-top: 22px;
-      background: #f4ead5;
-      border-radius: 22px;
-      padding: 18px;
-      text-align: center;
-      border: 1px solid rgba(200,166,90,0.35);
-    }
-
-    .price .sub {
-      font-size: 12px;
-      font-weight: 900;
-      color: #6b5a3c;
-    }
-
-    .price .main {
-      color: var(--green);
-      font-size: 42px;
-      font-weight: 950;
-      line-height: 1;
-      letter-spacing: -0.05em;
-      margin-top: 5px;
-    }
-
-    .price .main small {
-      font-size: 16px;
-      letter-spacing: 0;
-    }
-
-    .notice {
-      margin-top: 18px;
-      background: #fff8e8;
-      border-left: 4px solid var(--gold);
-      border-radius: 14px;
-      padding: 14px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #5b4a35;
-    }
-
-    .form-head {
-      background: var(--green);
-      color: #fff;
-      padding: 24px;
-    }
-
-    .form-head h2 {
-      margin: 0;
-      font-size: 24px;
-      line-height: 1.35;
-    }
-
-    .form-head p {
-      margin: 10px 0 0;
-      color: rgba(255,255,255,0.86);
-      font-size: 13px;
-    }
-
-    form {
-      padding: 24px;
-    }
-
-    .field {
-      margin-bottom: 18px;
-    }
-
-    label {
-      display: block;
-      font-size: 14px;
-      font-weight: 900;
-      color: var(--green);
-      margin-bottom: 7px;
-    }
-
-    .required {
-      display: inline-block;
-      margin-left: 6px;
-      background: var(--red);
-      color: #fff;
-      border-radius: 999px;
-      padding: 1px 7px;
-      font-size: 10px;
-      vertical-align: 1px;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid #ded3c2;
-      border-radius: 14px;
-      padding: 13px 14px;
-      font-size: 16px;
-      background: #fff;
-      color: var(--brown);
-      font-family: inherit;
-      outline: none;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(200,166,90,0.18);
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .checkbox {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      background: #f7f1e6;
-      border-radius: 16px;
-      padding: 14px;
-      border: 1px solid #eadfcf;
-    }
-
-    .checkbox input {
-      width: 20px;
-      height: 20px;
-      margin-top: 3px;
-      flex: 0 0 auto;
-    }
-
-    .checkbox label {
-      margin: 0;
-      color: var(--brown);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .checkbox strong {
-      color: var(--green);
-    }
-
-    .submit {
-      width: 100%;
-      min-height: 58px;
-      border: none;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #d9ba64, #b98b2f);
-      color: #fff;
-      font-size: 16px;
-      font-weight: 950;
-      cursor: pointer;
-      box-shadow: 0 14px 28px rgba(0,0,0,0.18);
-    }
-
-    .submit:disabled {
-      opacity: 0.68;
-      cursor: not-allowed;
-    }
-
-    .small-note {
-      margin-top: 14px;
-      font-size: 12px;
-      color: #6a5a43;
-      text-align: center;
-    }
-
-    .error {
-      display: none;
-      margin-bottom: 16px;
-      background: #fff0ed;
-      color: #9c3327;
-      border: 1px solid #efc7c1;
-      border-radius: 14px;
-      padding: 12px 14px;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    @media (max-width: 780px) {
-      .page {
-        padding: 18px 14px 34px;
-        background-attachment: scroll;
-      }
-
-      .wrap {
-        grid-template-columns: 1fr;
-      }
-
-      .intro {
-        position: static;
-      }
-
-      .logo {
-        font-size: 11px;
-        letter-spacing: 0.12em;
-      }
-
-      .back {
-        font-size: 11px;
-        padding: 7px 10px;
-      }
-
-      .intro,
-      .form-box {
-        border-radius: 24px;
-      }
-
-      .intro,
-      form,
-      .form-head {
-        padding: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <main class="request-page">
 
-  <div class="page">
-    <header class="header">
-      <div class="logo">TOTONOI<br>FUJI YAMANAKAKO</div>
-      <a href="index.html" class="back">LPに戻る</a>
-    </header>
-
-    <div class="wrap">
-      <aside class="intro">
-        <div class="label">このページ限定</div>
-        <h1>5月限定プラン<br>予約リクエスト</h1>
-
+    <section class="request-hero">
+      <div class="container">
+        <p class="eyebrow">THIS PAGE ONLY / MAY LIMITED</p>
+        <h1><span>20%OFF</span>で<br />予約リクエスト</h1>
         <p>
-          下記フォームよりご希望内容を送信してください。
-          通常予約も同時に承っているため、空室確認後に担当者よりご連絡いたします。
+          このページをご覧の方だけが送信できる予約リクエストフォームです。<br />
+          通常予約も同時に承っているため、スタッフが空室状況を確認し、空室がある場合のみ正式なご案内・予約確定となります。
         </p>
+      </div>
+    </section>
 
-        <div class="price">
-          <div class="sub">5月限定 特別価格</div>
-          <div class="main">19,800<small>円〜</small></div>
-        </div>
+    <section class="request-wrap">
+      <div class="discount-note">
+        <strong>表示金額について</strong><br />
+        このフォーム内に記載している宿泊料金・食事・サウナ・オプション等の金額は、すべて定価での金額です。<br />
+        本キャンペーン対象の場合、最終的なご請求総額より20%OFFにてご案内いたします。
+      </div>
 
-        <div class="notice">
-          ※この時点では予約確定ではありません。<br>
-          空室確認後、ご予約確定のご案内をいたします。
-        </div>
-      </aside>
+      <div class="request-note">
+        <strong>ご確認ください</strong><br />
+        ・本キャンペーンは5月宿泊かつ土曜日以外の日程が対象です。<br />
+        ・このページをご覧の方だけが予約リクエストを送信できます。<br />
+        ・通常予約も同時に承っているため、スタッフが空室状況を確認し、空室がある場合のみ正式なご案内・予約確定となります。<br />
+        ・現地決済のみとなります。<br />
+        ・キャンセル料は通常通り、30日前〜8日前：50％、7日前〜当日：100％が発生します。
+      </div>
 
-      <section class="form-box">
-        <div class="form-head">
-          <h2>リクエスト内容を入力してください</h2>
-          <p>送信後、担当者より空室状況を確認のうえご連絡いたします。</p>
-        </div>
+      <form id="requestForm" class="request-form" action="https://script.google.com/macros/s/AKfycbw1cAjFIYxechqB8xIgBj4XAtEVgWFsEuwmCcU88yV-5PRNLPVVskwQvKj3WbLaVxwBhw/exec" method="POST">
 
-        <form id="requestForm">
-          <div id="errorBox" class="error">
-            送信に失敗しました。時間をおいて再度お試しください。
-          </div>
+        <input type="hidden" name="campaign" value="TOTONOI富士山中湖 5月限定直前割20%OFF" />
 
-          <div class="field">
-            <label for="name">お名前<span class="required">必須</span></label>
-            <input type="text" id="name" name="name" placeholder="例：山田 太郎" required />
-          </div>
+        <div class="form-section">
+          <h2>まずは希望内容</h2>
+          <p class="form-section-lead">日程・人数・お部屋を選択してください。</p>
 
-          <div class="field">
-            <label for="tel">電話番号<span class="required">必須</span></label>
-            <input type="tel" id="tel" name="tel" placeholder="例：090-1234-5678" required />
-          </div>
+          <div class="section-grid">
+            <div class="form-group">
+              <label>ご予約希望日 <span>必須</span></label>
+              <input type="date" name="checkin" required />
+            </div>
 
-          <div class="field">
-            <label for="email">メールアドレス<span class="required">必須</span></label>
-            <input type="email" id="email" name="email" placeholder="例：example@gmail.com" required />
-          </div>
+            <div class="form-group">
+              <label>ご利用人数 <span>必須</span></label>
+              <select name="guests" required>
+                <option value="">選択してください</option>
+                <option value="2名">2名</option>
+                <option value="3名">3名</option>
+                <option value="4名">4名</option>
+                <option value="5名">5名</option>
+                <option value="6名">6名</option>
+              </select>
+            </div>
 
-          <div class="field">
-            <label for="date">宿泊希望日<span class="required">必須</span></label>
-            <input type="date" id="date" name="date" required />
-          </div>
+            <div class="form-group">
+              <label>ご希望のお部屋</label>
+              <select name="room_type">
+                <option value="">選択してください</option>
+                <option value="シングルドーム">シングルドーム</option>
+                <option value="ドッグランドーム">ドッグランドーム</option>
+                <option value="コネクトドーム">コネクトドーム</option>
+                <option value="ドッグコテージ">ドッグコテージ</option>
+                <option value="未定・おまかせ">未定・おまかせ</option>
+              </select>
+            </div>
 
-          <div class="field">
-            <label for="guests">ご利用人数<span class="required">必須</span></label>
-            <select id="guests" name="guests" required>
-              <option value="">選択してください</option>
-              <option value="2名">2名</option>
-              <option value="3名">3名</option>
-              <option value="4名">4名</option>
-              <option value="5名">5名</option>
-              <option value="6名">6名</option>
-              <option value="7名以上">7名以上</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <div class="checkbox">
-              <input type="checkbox" id="stove" name="stove" />
-              <label for="stove">
-                <strong>ガスコンロレンタルを希望する</strong><br>
-                追加料金：3,850円
-              </label>
+            <div class="form-group">
+              <label>愛犬同伴</label>
+              <select name="dog">
+                <option value="">選択してください</option>
+                <option value="なし">なし</option>
+                <option value="あり">あり</option>
+                <option value="相談したい">相談したい</option>
+              </select>
             </div>
           </div>
+        </div>
 
-          <div class="field">
-            <label for="message">その他リクエスト・ご質問</label>
-            <textarea id="message" name="message" placeholder="例：子どもがいます／サウナ希望時間について相談したい など"></textarea>
-          </div>
-
-          <button type="submit" class="submit">予約リクエストを送信する</button>
-
-          <p class="small-note">
-            送信時点では予約確定ではありません。空室確認後、担当者よりご連絡いたします。
+        <div class="form-section soft">
+          <h2>食事プラン</h2>
+          <p class="form-section-lead">
+            ご希望の食事内容をご選択ください。朝食のみ追加したい場合は、朝ごはんにチェックを入れてください。
           </p>
-        </form>
-      </section>
-    </div>
-  </div>
+
+          <div class="check-grid">
+            <label class="check-card">
+              <input type="radio" name="dinner_plan" value="豪華グランピングBBQ 8,800円/名" />
+              <span>
+                <span class="check-title">【夕食】豪華グランピングBBQ</span>
+                <span class="check-price">8,800円 / 名</span>
+              </span>
+            </label>
+
+            <label class="check-card">
+              <input type="radio" name="dinner_plan" value="カジュアルグランピングBBQ 5,500円/名" />
+              <span>
+                <span class="check-title">【夕食】カジュアルグランピングBBQ</span>
+                <span class="check-price">5,500円 / 名</span>
+              </span>
+            </label>
+
+            <label class="check-card">
+              <input type="radio" name="dinner_plan" value="素泊まり" />
+              <span>
+                <span class="check-title">素泊まり</span>
+                <span class="check-desc">持ち込みBBQをご希望の方は、オプションでガスグリルをご選択ください。</span>
+              </span>
+            </label>
+
+            <label class="check-card">
+              <input type="checkbox" name="breakfast" value="朝ごはん 2,200円/名" />
+              <span>
+                <span class="check-title">朝ごはん</span>
+                <span class="check-price">2,200円 / 名</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2>サウナ</h2>
+          <p class="form-section-lead">
+            ご希望貸切サウナをご選択ください。枠に制限がございますため、1組1枠のみとなります。<br />
+            サウナの種類は
+            <a href="https://www.yamanashi-sauna-glamping.com/sauna/" target="_blank" rel="noopener noreferrer" style="color:#0b62c4;text-decoration:underline;">こちら</a>
+          </p>
+
+          <input type="hidden" name="sauna_price_note" value="サウナ 1枠 5,000円" />
+
+          <table class="sauna-table">
+            <thead>
+              <tr>
+                <th>サウナ<br />1枠5,000円</th>
+                <th>15:30〜17:00</th>
+                <th>17:30〜19:00</th>
+                <th>19:30〜21:00</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>イグルーサウナ</td>
+                <td><input type="radio" name="sauna" value="イグルーサウナ 15:30〜17:00" /></td>
+                <td><input type="radio" name="sauna" value="イグルーサウナ 17:30〜19:00" /></td>
+                <td><input type="radio" name="sauna" value="イグルーサウナ 19:30〜21:00" /></td>
+              </tr>
+              <tr>
+                <td>アセマサウナ</td>
+                <td><input type="radio" name="sauna" value="アセマサウナ 15:30〜17:00" /></td>
+                <td><input type="radio" name="sauna" value="アセマサウナ 17:30〜19:00" /></td>
+                <td><input type="radio" name="sauna" value="アセマサウナ 19:30〜21:00" /></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <label class="sauna-none">
+            <input type="radio" name="sauna" value="サウナ希望なし" />
+            サウナは希望しない
+          </label>
+        </div>
+
+        <div class="form-section soft">
+          <h2>オプション</h2>
+          <p class="form-section-lead">
+            ご希望のオプションがございましたらご選択ください。料金は定価表記です。
+          </p>
+
+          <div class="check-grid">
+            <label class="check-card">
+              <input type="checkbox" name="options" value="ガスグリルレンタル +3,850円" />
+              <span>
+                <span class="check-title">ガスグリルレンタル</span>
+                <span class="check-price">+ 3,850円</span>
+                <span class="check-desc">素泊まりで持ち込みBBQをしたい方向け</span>
+              </span>
+            </label>
+
+            <label class="check-card">
+              <input type="checkbox" name="options" value="アニバーサリーショートケーキ 4号 +3,900円" />
+              <span>
+                <span class="check-title">アニバーサリーショートケーキ 4号</span>
+                <span class="check-price">+ 3,900円</span>
+              </span>
+            </label>
+
+            <label class="check-card">
+              <input type="checkbox" name="options" value="アニバーサリーショートケーキ 5号 +5,100円" />
+              <span>
+                <span class="check-title">アニバーサリーショートケーキ 5号</span>
+                <span class="check-price">+ 5,100円</span>
+              </span>
+            </label>
+
+            <label class="check-card">
+              <input type="checkbox" name="options" value="Birthday バルーン ピンク +2,200円" />
+              <span>
+                <span class="check-title">Birthday バルーン ピンク</span>
+                <span class="check-price">+ 2,200円</span>
+              </span>
+            </label>
+
+            <label class="check-card">
+              <input type="checkbox" name="options" value="Birthday バルーン ブラック +2,200円" />
+              <span>
+                <span class="check-title">Birthday バルーン ブラック</span>
+                <span class="check-price">+ 2,200円</span>
+              </span>
+            </label>
+
+            <label class="check-card">
+              <input type="checkbox" name="options" value="ペット用birthdayセット +3,000円" />
+              <span>
+                <span class="check-title">ペット用birthdayセット</span>
+                <span class="check-price">+ 3,000円</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2>お客様情報</h2>
+          <p class="form-section-lead">最後に代表者様の情報をご入力ください。</p>
+
+          <div class="section-grid">
+            <div class="form-group">
+              <label>SNSアカウント名 <span>必須</span></label>
+              <input type="text" name="sns_account" required placeholder="@example" />
+            </div>
+
+            <div class="form-group">
+              <label>ご氏名 <span>必須</span></label>
+              <input type="text" name="name" required placeholder="山田 太郎" />
+            </div>
+
+            <div class="form-group">
+              <label>メールアドレス <span>必須</span></label>
+              <input type="email" name="email" required placeholder="example@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label>電話番号 <span>必須</span></label>
+              <input type="tel" name="tel" required placeholder="090-0000-0000" />
+            </div>
+
+            <div class="form-group">
+              <label>生年月日 <span>必須</span></label>
+              <input type="date" name="birthday" required />
+            </div>
+
+            <div class="form-group full">
+              <label>ご住所 <span>必須</span></label>
+              <input type="text" name="address" required placeholder="都道府県・市区町村・番地・建物名" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section soft">
+          <h2>ご質問・ご要望</h2>
+          <p class="form-section-lead">
+            ケーキのメッセージ、苦手食材、到着時間、ご希望などがあればご記入ください。
+          </p>
+
+          <div class="form-group full">
+            <label>ご質問・ご要望</label>
+            <textarea name="message" rows="6" placeholder="例：ケーキに入れるメッセージ、到着予定時間、苦手食材、その他ご希望など"></textarea>
+          </div>
+        </div>
+
+        <div class="submit-area">
+          <button type="submit" class="submit-btn">予約リクエストを送信する</button>
+        </div>
+      </form>
+    </section>
+  </main>
 
   <script>
-    const GAS_URL = 'https://script.google.com/macros/s/AKfycbw1cAjFIYxechqB8xIgBj4XAtEVgWFsEuwmCcU88yV-5PRNLPVVskwQvKj3WbLaVxwBhw/exec';
+    const form = document.getElementById("requestForm");
 
-    const form = document.getElementById('requestForm');
-    const errorBox = document.getElementById('errorBox');
-
-    form.addEventListener('submit', function(e) {
+    form.addEventListener("submit", function(e) {
       e.preventDefault();
 
-      errorBox.style.display = 'none';
-
-      const submitButton = form.querySelector('button[type="submit"]');
+      const submitButton = form.querySelector(".submit-btn");
       submitButton.disabled = true;
-      submitButton.textContent = '送信中...';
+      submitButton.textContent = "送信中...";
 
-      const formData = {
-        name: document.getElementById('name').value,
-        tel: document.getElementById('tel').value,
-        email: document.getElementById('email').value,
-        date: document.getElementById('date').value,
-        guests: document.getElementById('guests').value,
-        stove: document.getElementById('stove').checked ? '希望する（追加 3,850円）' : '希望なし',
-        message: document.getElementById('message').value,
-        page: location.href
-      };
+      const formData = new FormData(form);
 
-      fetch(GAS_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'text/plain'
-        },
-        body: JSON.stringify(formData)
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
       })
       .then(() => {
-        window.location.href = './thanks.html';
+        window.location.href = "thanks.html";
       })
       .catch(() => {
-        errorBox.style.display = 'block';
         submitButton.disabled = false;
-        submitButton.textContent = '予約リクエストを送信する';
+        submitButton.textContent = "予約リクエストを送信する";
+        alert("送信に失敗しました。時間をおいて再度お試しください。");
       });
     });
   </script>
-
 </body>
 </html>
