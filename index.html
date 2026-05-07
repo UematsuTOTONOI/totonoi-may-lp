@@ -3,433 +3,642 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5月限定｜TOTONOI富士山中湖</title>
+  <style>
+    :root {
+      --green: #244334;
+      --green2: #315744;
+      --beige: #f5efe3;
+      --gold: #c8a65a;
+      --brown: #3b3026;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(0,0,0,0.16);
+    }
 
-  <title>5月限定直前割｜TOTONOI富士山中湖</title>
-  <meta name="description" content="GW明けの静かな山中湖で、富士山とサウナにととのう。TOTONOI富士山中湖の5月限定直前割。土曜日以外20%OFF。" />
+    * {
+      box-sizing: border-box;
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet" />
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <link rel="stylesheet" href="style.css" />
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+      color: var(--brown);
+      background: var(--beige);
+      line-height: 1.75;
+      padding-bottom: 88px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      color: #fff;
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.35)),
+        url("https://uematsutotonoi.github.io/totonoi-may-lp/images/hero.jpg") center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px 20px 48px;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 32%;
+      background: linear-gradient(transparent, rgba(245,239,227,1));
+      pointer-events: none;
+    }
+
+    .header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      font-weight: 800;
+      line-height: 1.2;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+
+    .header-badge {
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: 12px;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      margin: auto auto 20px;
+      text-align: center;
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.92);
+      color: var(--green);
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(32px, 8vw, 72px);
+      line-height: 1.08;
+      letter-spacing: 0.03em;
+      font-weight: 900;
+      text-shadow: 0 4px 22px rgba(0,0,0,0.38);
+    }
+
+    .hero h1 span {
+      display: block;
+      font-size: 0.58em;
+      margin-top: 10px;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-lead {
+      margin: 24px auto 0;
+      font-size: clamp(15px, 3.8vw, 20px);
+      font-weight: 700;
+      max-width: 650px;
+      text-shadow: 0 3px 16px rgba(0,0,0,0.48);
+    }
+
+    .price-box {
+      margin: 28px auto 0;
+      width: min(100%, 540px);
+      background: rgba(255,255,255,0.92);
+      color: var(--green);
+      border-radius: 24px;
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .price-sub {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--brown);
+      margin-bottom: 4px;
+    }
+
+    .price-main {
+      font-size: clamp(34px, 10vw, 58px);
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .price-main small {
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .price-note {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #6a5a43;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 26px;
+      min-height: 56px;
+      padding: 0 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d9ba64, #b98b2f);
+      color: #fff;
+      font-weight: 900;
+      font-size: 16px;
+      box-shadow: 0 16px 32px rgba(0,0,0,0.28);
+    }
+
+    section {
+      padding: 64px 20px;
+    }
+
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .section-title .en {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      margin-bottom: 6px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(25px, 6vw, 42px);
+      line-height: 1.28;
+      color: var(--green);
+      letter-spacing: 0.03em;
+    }
+
+    .section-title p {
+      margin: 14px auto 0;
+      max-width: 720px;
+      font-size: 15px;
+      color: #6a5a43;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .card .num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 14px;
+      color: #5d5144;
+    }
+
+    .plan {
+      background: #fff;
+    }
+
+    .plan-box {
+      background: linear-gradient(180deg, #fff, #fbf6ea);
+      border: 1px solid rgba(200,166,90,0.35);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .plan-image {
+      border-radius: 26px;
+      overflow: hidden;
+      min-height: 360px;
+      background:
+        linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+        url("https://uematsutotonoi.github.io/totonoi-may-lp/images/bbq.jpg") center/cover no-repeat;
+    }
+
+    .plan-detail h3 {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: clamp(24px, 5vw, 36px);
+      line-height: 1.32;
+    }
+
+    .plan-detail p {
+      margin: 0 0 18px;
+      color: #5f5143;
+    }
+
+    .included {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .included div {
+      background: #f3ead8;
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-weight: 800;
+      color: var(--green);
+      font-size: 14px;
+    }
+
+    .option {
+      background: #fff7e2;
+      border: 1px solid rgba(200,166,90,0.45);
+      border-radius: 18px;
+      padding: 14px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .schedule {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .schedule .section-title h2,
+    .schedule .section-title p {
+      color: #fff;
+    }
+
+    .timeline {
+      max-width: 760px;
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .time-item {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 14px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .time {
+      color: #f1d28a;
+      font-weight: 900;
+    }
+
+    .time-text {
+      font-weight: 700;
+    }
+
+    .note-section {
+      background: #f5efe3;
+    }
+
+    .note-box {
+      background: #fff;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    .note-box ul {
+      margin: 0;
+      padding-left: 1.2em;
+    }
+
+    .note-box li {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .final-cta {
+      text-align: center;
+      background:
+        linear-gradient(rgba(36,67,52,0.86), rgba(36,67,52,0.86)),
+        url("https://uematsutotonoi.github.io/totonoi-may-lp/images/hero.jpg") center/cover no-repeat;
+      color: #fff;
+    }
+
+    .final-cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(26px, 6vw, 42px);
+      line-height: 1.35;
+    }
+
+    .final-cta p {
+      max-width: 700px;
+      margin: 0 auto 22px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .fixed-cta {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d9ba64, #b98b2f);
+      color: #fff;
+      font-weight: 900;
+      font-size: 15px;
+      box-shadow: 0 12px 34px rgba(0,0,0,0.28);
+    }
+
+    @media (max-width: 840px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .plan-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plan-image {
+        min-height: 250px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding: 18px 16px 42px;
+      }
+
+      .logo {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+      }
+
+      .header-badge {
+        font-size: 11px;
+        padding: 7px 10px;
+      }
+
+      section {
+        padding: 52px 16px;
+      }
+
+      .price-box {
+        border-radius: 20px;
+        padding: 20px 14px;
+      }
+
+      .plan-box {
+        padding: 18px;
+        border-radius: 24px;
+      }
+
+      .time-item {
+        grid-template-columns: 76px 1fr;
+        gap: 10px;
+        padding: 14px;
+      }
+
+      .fixed-cta {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <div class="lp-wrapper">
 
-    <header class="site-header">
-      <div class="container header-inner">
-        <a href="index.html" class="brand">
-          <span class="brand-village">Glamping Village</span>
-          <span class="brand-main">TOTONOI</span>
-          <span class="brand-sub">Fujiyamanakako</span>
-        </a>
-
-        <nav class="header-nav">
-          <a href="#experience">過ごし方</a>
-          <a href="#rooms">お部屋・サウナ</a>
-          <a href="#discount">20%OFF</a>
-          <a href="request.html" class="nav-cta">予約リクエスト</a>
-        </nav>
-      </div>
+  <main class="hero">
+    <header class="header">
+      <div class="logo">TOTONOI<br>FUJI YAMANAKAKO</div>
+      <div class="header-badge">5月限定プラン</div>
     </header>
 
-    <main>
+    <div class="hero-content">
+      <div class="label">このページ限定で予約リクエスト受付中</div>
+      <h1>
+        富士山のふもとで<br>
+        春のグランピング
+        <span>BBQ・サウナ・焚き火体験</span>
+      </h1>
 
-      <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-shade"></div>
+      <p class="hero-lead">
+        5月だけの特別価格で、家族・友人・カップル旅行をもっと気軽に。
+      </p>
 
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <p class="eyebrow">MAY LIMITED / THIS PAGE ONLY</p>
+      <div class="price-box">
+        <div class="price-sub">5月限定 特別価格</div>
+        <div class="price-main">19,800<small>円〜</small></div>
+        <div class="price-note">税込／日程・人数により料金は変動します</div>
+      </div>
 
-            <h1>
-              GW明けの山中湖で、<br />
-              富士山とサウナに逃げる。<br />
-              <span class="hero-discount-text">今だけ20%OFF</span>
-            </h1>
-
-            <p class="hero-lead">
-              人混みが落ち着いた5月だけ。<br />
-              貸切サウナ、BBQ、焚き火、富士山ビューのグランピングを
-              このページ限定で20%OFF。
-            </p>
-
-            <div class="hero-actions">
-              <a href="request.html" class="btn btn-primary">
-                20%OFFで予約リクエスト
-              </a>
-              <a href="#experience" class="btn btn-glass">
-                どんな旅になるか見る
-              </a>
-            </div>
-
-            <p class="micro-copy">
-              ※このページをご覧の方だけが予約リクエストを送信できます。通常予約も同時に承っているため、スタッフが空室状況を確認後、空室がある場合のみ予約確定のご案内をいたします。
-            </p>
-          </div>
-
-          <div class="hero-card">
-            <p class="hero-card-label">直前だからこその特別案内</p>
-            <div class="discount-big">
-              <span>20</span>%OFF
-            </div>
-            <p class="hero-card-text">
-              5月宿泊・土曜日以外限定<br />
-              表示金額の総額から20%OFF
-            </p>
-            <div class="discount-mini-note">
-              このページをご覧の方限定。<br />
-              ページを離れた後は同条件でのご案内ができません。
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="quick">
-        <div class="container quick-grid">
-          <div class="quick-item">
-            <span>01</span>
-            <strong>このページ限定</strong>
-            <p>通常予約ではなく、今このページをご覧の方だけのご案内です。</p>
-          </div>
-
-          <div class="quick-item">
-            <span>02</span>
-            <strong>土曜日以外20%OFF</strong>
-            <p>5月の対象日程は、宿泊総額から20%OFFでご案内します。</p>
-          </div>
-
-          <div class="quick-item">
-            <span>03</span>
-            <strong>予約リクエスト制</strong>
-            <p>このページをご覧の方だけが送信できる予約リクエストです。通常予約も同時に承っているため、空室確認後のご案内となります。</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section intro">
-        <div class="container intro-grid">
-          <div class="intro-copy">
-            <p class="section-kicker">WHY MAY?</p>
-            <h2>
-              混雑が落ち着いた5月は、<br />
-              “ちゃんと休む旅”にちょうどいい。
-            </h2>
-            <p>
-              GWの賑わいがひと段落した山中湖。  
-              富士山を眺めて、サウナでととのって、夜はBBQと焚き火。
-              遠くまで行かなくても、1泊でしっかりリセットできる時間を過ごせます。
-            </p>
-          </div>
-
-          <div class="intro-photo">
-            <img src="images/fuji-firepit.webp" alt="富士山と焚き火" />
-          </div>
-        </div>
-      </section>
-
-      <section class="section recommend">
-        <div class="container">
-          <div class="section-head">
-            <p class="section-kicker">FOR YOU</p>
-            <h2>こんな方におすすめです</h2>
-          </div>
-
-          <div class="recommend-grid">
-            <div class="recommend-card">GWは混んでいて旅行を避けた方</div>
-            <div class="recommend-card">5月中に近場でリフレッシュしたい方</div>
-            <div class="recommend-card">富士山を見ながらサウナに入りたい方</div>
-            <div class="recommend-card">ホテルより少し特別な体験をしたい方</div>
-            <div class="recommend-card">カップル・友人と写真に残る旅をしたい方</div>
-            <div class="recommend-card">愛犬と泊まれる場所を探している方</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section experience" id="experience">
-        <div class="container">
-          <div class="section-head white">
-            <p class="section-kicker">1 NIGHT STORY</p>
-            <h2>5月のTOTONOIで過ごす、1泊2日</h2>
-            <p>
-              サウナだけじゃなく、4月から新スタートした無料体験も楽しめる特別な滞在イメージです。
-            </p>
-          </div>
-
-          <div class="story-timeline">
-            <div class="story-item">
-              <div class="story-time">15:00</div>
-              <div>
-                <h3>チェックイン</h3>
-                <p>
-                  富士山を眺めながら、まずはお部屋でひと息。荷物を置いて、ゆっくり滞在スタート。
-                </p>
-              </div>
-            </div>
-
-            <div class="story-item">
-              <div class="story-time">15:30</div>
-              <div>
-                <h3>マシュマロ作り・飯盒炊飯体験</h3>
-                <p>
-                  4月から新スタートした無料体験オプションです。マシュマロ作り体験や飯盒炊飯体験を、この機会にぜひお試しください。<br />
-                  ※マシュマロ・飯盒炊飯ともに、稼働状況により開催できない場合がございます。無料体験のため、出来上がるものは1組単位となり、追加はできません。
-                </p>
-              </div>
-            </div>
-
-            <div class="story-item">
-              <div class="story-time">17:30</div>
-              <div>
-                <h3>貸切サウナ</h3>
-                <p>
-                  誰にも気をつかわず、自分たちのペースで楽しめる貸切サウナ。外気浴までゆっくりお過ごしください。
-                </p>
-              </div>
-            </div>
-
-            <div class="story-item">
-              <div class="story-time">19:00</div>
-              <div>
-                <h3>夕食</h3>
-                <p>
-                  グランピングBBQや素泊まりスタイルなど、旅のスタイルに合わせて夕食時間をお楽しみください。
-                </p>
-              </div>
-            </div>
-
-            <div class="story-item">
-              <div class="story-time">20:00</div>
-              <div>
-                <h3>焚き火・マシュマロ・花火</h3>
-                <p>
-                  焚き火をしながら、作ったマシュマロを焼いてみましょう。花火も一緒に楽しめる、夜のグランピング時間です。
-                </p>
-              </div>
-            </div>
-
-            <div class="story-item">
-              <div class="story-time">21:30</div>
-              <div>
-                <h3>終了後はお部屋でゆっくり</h3>
-                <p>
-                  体験後はお部屋でのんびり。自然の中で過ごした余韻を感じながら、ゆっくりお休みください。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section gallery-section">
-        <div class="container">
-          <div class="section-head">
-            <p class="section-kicker">SCENE</p>
-            <h2>サウナ、BBQ、焚き火、富士山。<br />1泊で全部楽しむ。</h2>
-          </div>
-
-          <div class="masonry">
-            <div class="masonry-card large">
-              <img src="images/sauna.webp" alt="貸切サウナ" />
-              <div>
-                <span>SAUNA</span>
-                <h3>貸切サウナで“ととのう”</h3>
-              </div>
-            </div>
-
-            <div class="masonry-card">
-              <img src="images/bbq.webp" alt="BBQ" />
-              <div>
-                <span>BBQ</span>
-                <h3>自然の中で楽しむ夕食</h3>
-              </div>
-            </div>
-
-            <div class="masonry-card">
-              <img src="images/room.webp" alt="客室" />
-              <div>
-                <span>ROOM</span>
-                <h3>快適に泊まれるグランピング</h3>
-              </div>
-            </div>
-
-            <div class="masonry-card wide">
-              <img src="images/dog.webp" alt="愛犬同伴" />
-              <div>
-                <span>DOG FRIENDLY</span>
-                <h3>愛犬と一緒に過ごせるお部屋も</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section rooms" id="rooms">
-        <div class="container">
-          <div class="section-head">
-            <p class="section-kicker">ROOM & SAUNA</p>
-            <h2>お部屋・サウナの詳細</h2>
-            <p>
-              どのお部屋が合うか、どのサウナにするか。気になる方は公式ページもあわせてご確認ください。
-            </p>
-          </div>
-
-          <div class="detail-grid">
-            <article class="detail-card">
-              <img src="images/room.webp" alt="お部屋" />
-              <div class="detail-body">
-                <p>ROOM</p>
-                <h3>人数や旅のスタイルに合わせて選べる客室</h3>
-                <ul>
-                  <li>シングルドーム</li>
-                  <li>ドッグランドーム</li>
-                  <li>コネクトドーム</li>
-                  <li>ドッグコテージ</li>
-                </ul>
-                <a href="https://www.yamanashi-sauna-glamping.com/room/" target="_blank" rel="noopener noreferrer">
-                  お部屋紹介ページを見る
-                </a>
-              </div>
-            </article>
-
-            <article class="detail-card">
-              <img src="images/sauna.webp" alt="サウナ" />
-              <div class="detail-body">
-                <p>SAUNA</p>
-                <h3>2種類の貸切サウナで、90分のととのい体験</h3>
-                <ul>
-                  <li>イグルーサウナ</li>
-                  <li>ASEMAサウナ</li>
-                  <li>15:30〜 / 17:30〜 / 19:30〜</li>
-                  <li>1枠 5,000円</li>
-                </ul>
-                <a href="https://www.yamanashi-sauna-glamping.com/sauna/" target="_blank" rel="noopener noreferrer">
-                  サウナ紹介ページを見る
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section discount" id="discount">
-        <div class="container discount-grid">
-          <div>
-            <p class="section-kicker">SPECIAL OFFER</p>
-            <h2>
-              このページ限定で、<br />
-              最終総額から20%OFF。
-            </h2>
-            <p>
-              宿泊料金・食事・サウナ・オプションなど、フォーム内の表示金額はすべて定価です。  
-              対象条件に当てはまる場合、最終的なご請求総額より20%OFFでご案内します。
-            </p>
-          </div>
-
-          <div class="discount-panel">
-            <div class="discount-number">
-              <span>20</span>%OFF
-            </div>
-            <ul>
-              <li>対象：5月のご宿泊</li>
-              <li>対象日：土曜日以外</li>
-              <li>形式：予約リクエスト制</li>
-              <li>条件：このページをご覧の方限定</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section flow">
-        <div class="container">
-          <div class="section-head">
-            <p class="section-kicker">HOW TO REQUEST</p>
-            <h2>このページをご覧の方だけが送信できる、限定予約リクエストです。</h2>
-          </div>
-
-          <div class="flow-grid">
-            <div class="flow-card">
-              <span>STEP 01</span>
-              <h3>フォーム送信</h3>
-              <p>日程・人数・食事・サウナなど、ご希望内容を入力してください。</p>
-            </div>
-
-            <div class="flow-card">
-              <span>STEP 02</span>
-              <h3>スタッフ確認</h3>
-              <p>入力内容と空室状況、キャンペーン対象日かを確認します。</p>
-            </div>
-
-            <div class="flow-card">
-              <span>STEP 03</span>
-              <h3>空室があればご案内</h3>
-              <p>20%OFF適用後の内容をスタッフよりご案内します。</p>
-            </div>
-
-            <div class="flow-card">
-              <span>STEP 04</span>
-              <h3>正式予約</h3>
-              <p>内容をご確認いただいた後、正式なご予約となります。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section caution">
-        <div class="container">
-          <div class="caution-box">
-            <h2>ご確認ください</h2>
-            <p>
-              この直前割は、現在このページをご覧いただいている方限定のご案内です。
-              ページを離れた後のお問い合わせでは、同条件でのご案内ができません。
-              ご希望の方は、このページを開いている今のうちに予約リクエストをお送りください。
-            </p>
-
-            <ul>
-              <li>このページをご覧の方だけが予約リクエストを送信できます。</li>
-              <li>通常予約も同時に承っているため、スタッフが空室状況を確認し、空室がある場合のみ正式なご案内・予約確定となります。</li>
-              <li>空室状況により、ご希望に添えない場合がございます。</li>
-              <li>現地決済のみとなります。</li>
-              <li>キャンセル料は通常通り、30日前〜8日前：50％、7日前〜当日：100％が発生します。</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="final">
-        <div class="final-bg"></div>
-        <div class="container final-inner">
-          <p class="section-kicker">LAST CALL</p>
-          <h2>
-            5月の山中湖で、<br />
-            ちゃんと休む1泊を。
-          </h2>
-          <p>
-            サウナ、BBQ、焚き火、朝の富士山。  
-            今このページを見ている方だけ、20%OFFで予約リクエストできます。
-          </p>
-
-          <a href="request.html" class="btn btn-primary">
-            20%OFFで予約リクエスト
-          </a>
-
-          <p class="micro-copy light">
-            ※通常予約も同時に承っているため、空室確認後のご案内となります。
-          </p>
-        </div>
-      </section>
-
-    </main>
-
-    <div class="sticky-cta">
-      <a href="request.html">
-        <span>このページ限定</span>
-        20%OFFで予約リクエスト
-      </a>
+      <a href="request.html" class="cta">予約リクエストを送信する</a>
     </div>
+  </main>
 
-  </div>
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <div class="en">LIMITED PLAN</div>
+        <h2>5月だけの特別な過ごし方</h2>
+        <p>
+          自然の中でゆっくり過ごしながら、BBQ、サウナ、焚き火、マシュマロ体験まで楽しめる限定プランです。
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="num">1</div>
+          <h3>手ぶらでBBQ</h3>
+          <p>夕食はBBQスタイル。自然に囲まれながら、非日常の食事時間をお楽しみいただけます。</p>
+        </div>
+
+        <div class="card">
+          <div class="num">2</div>
+          <h3>富士山麓で外気浴</h3>
+          <p>サウナ後の外気浴は格別。山中湖エリアならではの澄んだ空気で心も身体も整います。</p>
+        </div>
+
+        <div class="card">
+          <div class="num">3</div>
+          <h3>焚き火とマシュマロ</h3>
+          <p>夕方から夜にかけて、焚き火を囲むゆったりとした時間をお過ごしください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="plan">
+    <div class="container">
+      <div class="plan-box">
+        <div class="plan-grid">
+          <div class="plan-image"></div>
+
+          <div class="plan-detail">
+            <h3>このページを見た方限定の予約リクエスト</h3>
+            <p>
+              こちらのページから、5月限定プランの予約リクエストを送信できます。
+              通常予約も同時に承っているため、空室確認後に予約確定となります。
+            </p>
+
+            <div class="included">
+              <div>夕食BBQセット付き</div>
+              <div>朝食付き</div>
+              <div>マシュマロ作り体験付き</div>
+              <div>サウナ体験可能</div>
+            </div>
+
+            <div class="option">
+              オプション：ガスコンロレンタル 追加 3,850円
+            </div>
+
+            <a href="request.html" class="cta">空室リクエストへ進む</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="schedule">
+    <div class="container">
+      <div class="section-title">
+        <div class="en">SCHEDULE</div>
+        <h2>おすすめの過ごし方</h2>
+        <p>チェックイン後は、自然の中でゆっくりと非日常をお楽しみください。</p>
+      </div>
+
+      <div class="timeline">
+        <div class="time-item">
+          <div class="time">15:00</div>
+          <div class="time-text">チェックイン</div>
+        </div>
+        <div class="time-item">
+          <div class="time">15:30</div>
+          <div class="time-text">マシュマロ作り体験・施設内でゆっくり散策</div>
+        </div>
+        <div class="time-item">
+          <div class="time">17:00</div>
+          <div class="time-text">サウナ・外気浴でリラックス</div>
+        </div>
+        <div class="time-item">
+          <div class="time">18:30</div>
+          <div class="time-text">夕食BBQ</div>
+        </div>
+        <div class="time-item">
+          <div class="time">20:00</div>
+          <div class="time-text">焚き火を囲んで夜の時間を満喫</div>
+        </div>
+        <div class="time-item">
+          <div class="time">翌朝</div>
+          <div class="time-text">朝食後、自然を感じながらチェックアウトまでゆっくり</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="note-section">
+    <div class="container">
+      <div class="section-title">
+        <div class="en">IMPORTANT</div>
+        <h2>ご予約前のご案内</h2>
+      </div>
+
+      <div class="note-box">
+        <ul>
+          <li>このページから送信できるのは予約リクエストです。送信時点では予約確定ではありません。</li>
+          <li>通常予約も同時に承っているため、空室状況を確認後、担当者よりご連絡いたします。</li>
+          <li>日程・人数・客室タイプにより料金が変動する場合があります。</li>
+          <li>ガスコンロレンタルをご希望の場合は、追加料金3,850円が発生します。</li>
+          <li>天候や施設状況により、一部体験内容が変更となる場合があります。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2>5月だけの特別なグランピング体験を。</h2>
+      <p>
+        このページをご覧いただいた方限定で、予約リクエストを受け付けています。
+        空室確認後、担当者よりご連絡いたします。
+      </p>
+      <a href="request.html" class="cta">予約リクエストを送信する</a>
+    </div>
+  </section>
+
+  <a href="request.html" class="fixed-cta">予約リクエストを送信する</a>
+
 </body>
 </html>
