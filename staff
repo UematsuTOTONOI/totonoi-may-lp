@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>社内確認用｜5月限定直前割｜TOTONOI富士山中湖</title>
+  <meta name="description" content="社内確認用ページです。広告効果計測にはカウントされません。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .staff-notice {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: #b99858;
+      color: #fff;
+      text-align: center;
+      padding: 8px 12px;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    .site-header {
+      top: 34px;
+    }
+
+    .staff-link-disabled {
+      cursor: default;
+    }
+
+    .staff-link-disabled:hover {
+      transform: none;
+    }
+
+    @media (max-width: 768px) {
+      .staff-notice {
+        font-size: 11px;
+        padding: 7px 8px;
+      }
+
+      .site-header {
+        top: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="staff-notice">
+    社内確認用ページです。広告効果計測にはカウントされません。
+  </div>
+
+  <div class="lp-wrapper">
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="staff.html" class="brand">
+          <span class="brand-village">Glamping Village</span>
+          <span class="brand-main">TOTONOI</span>
+          <span class="brand-sub">Fujiyamanakako</span>
+        </a>
+
+        <nav class="header-nav">
+          <a href="#experience">過ごし方</a>
+          <a href="#rooms">お部屋・サウナ</a>
+          <a href="#discount">20%OFF</a>
+          <a href="#" class="nav-cta staff-link-disabled">予約リクエスト</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-shade"></div>
+
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">MAY LIMITED / THIS PAGE ONLY</p>
+
+            <h1>
+              GW明けの山中湖で、<br />
+              富士山とサウナを楽しむ。<br />
+              <span class="hero-discount-text">今だけ20%OFF</span>
+            </h1>
+
+            <p class="hero-lead">
+              人混みが落ち着いた5月だけ。<br />
+              貸切サウナ、BBQ、焚き火、富士山ビューのグランピングを
+              このページ限定で20%OFF。
+            </p>
+
+            <div class="hero-actions">
+              <a href="#" class="btn btn-primary staff-link-disabled">
+                20%OFFで予約リクエスト
+              </a>
+              <a href="#experience" class="btn btn-glass">
+                どんな旅になるか見る
+              </a>
+            </div>
+
+            <p class="micro-copy">
+              ※このページをご覧の方だけが予約リクエストを送信できます。通常予約も同時に承っているため、スタッフが空室状況を確認後、空室がある場合のみ予約確定のご案内をいたします。
+            </p>
+          </div>
+
+          <div class="hero-card">
+            <p class="hero-card-label">直前だからこその特別案内</p>
+            <div class="discount-big">
+              <span>20</span>%OFF
+            </div>
+            <p class="hero-card-text">
+              5月宿泊・土曜日以外限定<br />
+              表示金額の総額から20%OFF
+            </p>
+            <div class="discount-mini-note">
+              このページをご覧の方限定。<br />
+              ページを離れた後は同条件でのご案内ができません。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick">
+        <div class="container quick-grid">
+          <div class="quick-item">
+            <span>01</span>
+            <strong>このページ限定</strong>
+            <p>通常予約ではなく、今このページをご覧の方だけのご案内です。</p>
+          </div>
+
+          <div class="quick-item">
+            <span>02</span>
+            <strong>土曜日以外20%OFF</strong>
+            <p>5月の対象日程は、宿泊総額から20%OFFでご案内します。</p>
+          </div>
+
+          <div class="quick-item">
+            <span>03</span>
+            <strong>予約リクエスト制</strong>
+            <p>このページをご覧の方だけが送信できる予約リクエストです。通常予約も同時に承っているため、空室確認後のご案内となります。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro">
+        <div class="container intro-grid">
+          <div class="intro-copy">
+            <p class="section-kicker">WHY MAY?</p>
+            <h2>
+              混雑が落ち着いた5月は、<br />
+              “ちゃんと休む旅”にちょうどいい。
+            </h2>
+            <p>
+              GWの賑わいがひと段落した山中湖。
+              富士山を眺めて、サウナでととのって、夜はBBQと焚き火。
+              遠くまで行かなくても、1泊でしっかりリセットできる時間を過ごせます。
+            </p>
+          </div>
+
+          <div class="intro-photo">
+            <img src="images/fuji-firepit.webp" alt="富士山と焚き火" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section recommend">
+        <div class="container">
+          <div class="section-head">
+            <p class="section-kicker">FOR YOU</p>
+            <h2>こんな方におすすめです</h2>
+          </div>
+
+          <div class="recommend-grid">
+            <div class="recommend-card">GWは混んでいて旅行を避けた方</div>
+            <div class="recommend-card">5月中に近場でリフレッシュしたい方</div>
+            <div class="recommend-card">富士山を見ながらサウナに入りたい方</div>
+            <div class="recommend-card">ホテルより少し特別な体験をしたい方</div>
+            <div class="recommend-card">カップル・友人と写真に残る旅をしたい方</div>
+            <div class="recommend-card">愛犬と泊まれる場所を探している方</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experience" id="experience">
+        <div class="container">
+          <div class="section-head white">
+            <p class="section-kicker">1 NIGHT STORY</p>
+            <h2>5月のTOTONOIで過ごす、1泊2日</h2>
+            <p>
+              サウナだけじゃなく、4月から新スタートした無料体験も楽しめる特別な滞在イメージです。
+            </p>
+          </div>
+
+          <div class="story-timeline">
+            <div class="story-item">
+              <div class="story-time">15:00</div>
+              <div>
+                <h3>チェックイン</h3>
+                <p>富士山を眺めながら、まずはお部屋でひと息。荷物を置いて、ゆっくり滞在スタート。</p>
+              </div>
+            </div>
+
+            <div class="story-item">
+              <div class="story-time">15:30</div>
+              <div>
+                <h3>マシュマロ作り・飯盒炊飯体験</h3>
+                <p>
+                  4月から新スタートした無料体験オプションです。マシュマロ作り体験や飯盒炊飯体験を、この機会にぜひお試しください。<br />
+                  ※マシュマロ・飯盒炊飯ともに、稼働状況により開催できない場合がございます。無料体験のため、出来上がるものは1組単位となり、追加はできません。
+                </p>
+              </div>
+            </div>
+
+            <div class="story-item">
+              <div class="story-time">17:30</div>
+              <div>
+                <h3>貸切サウナ</h3>
+                <p>誰にも気をつかわず、自分たちのペースで楽しめる貸切サウナ。外気浴までゆっくりお過ごしください。</p>
+              </div>
+            </div>
+
+            <div class="story-item">
+              <div class="story-time">19:00</div>
+              <div>
+                <h3>夕食</h3>
+                <p>グランピングBBQや素泊まりスタイルなど、旅のスタイルに合わせて夕食時間をお楽しみください。</p>
+              </div>
+            </div>
+
+            <div class="story-item">
+              <div class="story-time">20:00</div>
+              <div>
+                <h3>焚き火・マシュマロ・花火</h3>
+                <p>焚き火をしながら、作ったマシュマロを焼いてみましょう。花火も一緒に楽しめる、夜のグランピング時間です。</p>
+              </div>
+            </div>
+
+            <div class="story-item">
+              <div class="story-time">21:30</div>
+              <div>
+                <h3>終了後はお部屋でゆっくり</h3>
+                <p>体験後はお部屋でのんびり。自然の中で過ごした余韻を感じながら、ゆっくりお休みください。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery-section">
+        <div class="container">
+          <div class="section-head">
+            <p class="section-kicker">SCENE</p>
+            <h2>サウナ、BBQ、焚き火、富士山。<br />1泊で全部楽しむ。</h2>
+          </div>
+
+          <div class="masonry">
+            <div class="masonry-card large">
+              <img src="images/sauna.webp" alt="貸切サウナ" />
+              <div>
+                <span>SAUNA</span>
+                <h3>貸切サウナで“ととのう”</h3>
+              </div>
+            </div>
+
+            <div class="masonry-card">
+              <img src="images/bbq.webp" alt="BBQ" />
+              <div>
+                <span>BBQ</span>
+                <h3>自然の中で楽しむ夕食</h3>
+              </div>
+            </div>
+
+            <div class="masonry-card">
+              <img src="images/room.webp" alt="客室" />
+              <div>
+                <span>ROOM</span>
+                <h3>快適に泊まれるグランピング</h3>
+              </div>
+            </div>
+
+            <div class="masonry-card wide">
+              <img src="images/dog.webp" alt="愛犬同伴" />
+              <div>
+                <span>DOG FRIENDLY</span>
+                <h3>愛犬と一緒に過ごせるお部屋も</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section rooms" id="rooms">
+        <div class="container">
+          <div class="section-head">
+            <p class="section-kicker">ROOM & SAUNA</p>
+            <h2>お部屋・サウナの詳細</h2>
+            <p>どのお部屋が合うか、どのサウナにするか。気になる方は公式ページもあわせてご確認ください。</p>
+          </div>
+
+          <div class="detail-grid">
+            <article class="detail-card">
+              <img src="images/room.webp" alt="お部屋" />
+              <div class="detail-body">
+                <p>ROOM</p>
+                <h3>人数や旅のスタイルに合わせて選べる客室</h3>
+                <ul>
+                  <li>シングルドーム</li>
+                  <li>ドッグランドーム</li>
+                  <li>コネクトドーム</li>
+                  <li>ドッグコテージ</li>
+                </ul>
+                <a href="https://www.yamanashi-sauna-glamping.com/room/" target="_blank" rel="noopener noreferrer">
+                  お部屋紹介ページを見る
+                </a>
+              </div>
+            </article>
+
+            <article class="detail-card">
+              <img src="images/sauna.webp" alt="サウナ" />
+              <div class="detail-body">
+                <p>SAUNA</p>
+                <h3>2種類の貸切サウナで、90分のととのい体験</h3>
+                <ul>
+                  <li>イグルーサウナ</li>
+                  <li>ASEMAサウナ</li>
+                  <li>15:30〜 / 17:30〜 / 19:30〜</li>
+                  <li>1枠 5,000円</li>
+                </ul>
+                <a href="https://www.yamanashi-sauna-glamping.com/sauna/" target="_blank" rel="noopener noreferrer">
+                  サウナ紹介ページを見る
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section discount" id="discount">
+        <div class="container discount-grid">
+          <div>
+            <p class="section-kicker">SPECIAL OFFER</p>
+            <h2>このページ限定で、<br />最終総額から20%OFF。</h2>
+            <p>
+              宿泊料金・食事・サウナ・オプションなど、フォーム内の表示金額はすべて定価です。
+              対象条件に当てはまる場合、最終的なご請求総額より20%OFFでご案内します。
+            </p>
+          </div>
+
+          <div class="discount-panel">
+            <div class="discount-number">
+              <span>20</span>%OFF
+            </div>
+            <ul>
+              <li>対象：5月のご宿泊</li>
+              <li>対象日：土曜日以外</li>
+              <li>形式：予約リクエスト制</li>
+              <li>条件：このページをご覧の方限定</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section flow">
+        <div class="container">
+          <div class="section-head">
+            <p class="section-kicker">HOW TO REQUEST</p>
+            <h2>このページをご覧の方だけが送信できる、限定予約リクエストです。</h2>
+          </div>
+
+          <div class="flow-grid">
+            <div class="flow-card">
+              <span>STEP 01</span>
+              <h3>フォーム送信</h3>
+              <p>日程・人数・食事・サウナなど、ご希望内容を入力してください。</p>
+            </div>
+
+            <div class="flow-card">
+              <span>STEP 02</span>
+              <h3>スタッフ確認</h3>
+              <p>入力内容と空室状況、キャンペーン対象日かを確認します。</p>
+            </div>
+
+            <div class="flow-card">
+              <span>STEP 03</span>
+              <h3>空室があればご案内</h3>
+              <p>20%OFF適用後の内容をスタッフよりご案内します。</p>
+            </div>
+
+            <div class="flow-card">
+              <span>STEP 04</span>
+              <h3>正式予約</h3>
+              <p>内容をご確認いただいた後、正式なご予約となります。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section caution">
+        <div class="container">
+          <div class="caution-box">
+            <h2>ご確認ください</h2>
+            <p>
+              この直前割は、現在このページをご覧いただいている方限定のご案内です。
+              ページを離れた後のお問い合わせでは、同条件でのご案内ができません。
+              ご希望の方は、このページを開いている今のうちに予約リクエストをお送りください。
+            </p>
+
+            <ul>
+              <li>このページをご覧の方だけが予約リクエストを送信できます。</li>
+              <li>通常予約も同時に承っているため、スタッフが空室状況を確認し、空室がある場合のみ正式なご案内・予約確定となります。</li>
+              <li>空室状況により、ご希望に添えない場合がございます。</li>
+              <li>現地決済のみとなります。</li>
+              <li>キャンセル料は通常通り、30日前〜8日前：50％、7日前〜当日：100％が発生します。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="final">
+        <div class="final-bg"></div>
+        <div class="container final-inner">
+          <p class="section-kicker">LAST CALL</p>
+          <h2>5月の山中湖で、<br />ちゃんと休む1泊を。</h2>
+          <p>
+            サウナ、BBQ、焚き火、朝の富士山。
+            今このページを見ている方だけ、20%OFFで予約リクエストできます。
+          </p>
+
+          <a href="#" class="btn btn-primary staff-link-disabled">
+            20%OFFで予約リクエスト
+          </a>
+
+          <p class="micro-copy light">
+            ※通常予約も同時に承っているため、空室確認後のご案内となります。
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <div class="sticky-cta">
+      <a href="#" class="staff-link-disabled">
+        <span>社内確認用</span>
+        予約リクエストボタンは無効です
+      </a>
+    </div>
+
+  </div>
+</body>
+</html>
